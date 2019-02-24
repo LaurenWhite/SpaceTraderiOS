@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4E2301222220BAD1008FDA8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301212220BAD1008FDA8F /* AppDelegate.swift */; };
-		4E2301242220BAD1008FDA8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301232220BAD1008FDA8F /* ViewController.swift */; };
+		4E2301242220BAD1008FDA8F /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301232220BAD1008FDA8F /* StartScreenViewController.swift */; };
 		4E2301272220BAD1008FDA8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2301252220BAD1008FDA8F /* Main.storyboard */; };
 		4E2301292220BAD3008FDA8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2301282220BAD3008FDA8F /* Assets.xcassets */; };
 		4E23012C2220BAD3008FDA8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E23012A2220BAD3008FDA8F /* LaunchScreen.storyboard */; };
 		4E2301372220BAD3008FDA8F /* SpaceTraderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301362220BAD3008FDA8F /* SpaceTraderiOSTests.swift */; };
+		4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */; };
+		4E2301462220C650008FDA8F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301452220C650008FDA8F /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		4E23011E2220BAD1008FDA8F /* SpaceTraderiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTraderiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2301212220BAD1008FDA8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E2301232220BAD1008FDA8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E2301232220BAD1008FDA8F /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		4E2301262220BAD1008FDA8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E2301282220BAD3008FDA8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E23012B2220BAD3008FDA8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		4E2301322220BAD3008FDA8F /* SpaceTraderiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceTraderiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2301362220BAD3008FDA8F /* SpaceTraderiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTraderiOSTests.swift; sourceTree = "<group>"; };
 		4E2301382220BAD3008FDA8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationViewController.swift; sourceTree = "<group>"; };
+		4E2301452220C650008FDA8F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,9 @@
 		4E2301202220BAD1008FDA8F /* SpaceTraderiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E2301422220BF62008FDA8F /* Entity */,
+				4E2301412220BD2E008FDA8F /* Views */,
 				4E2301212220BAD1008FDA8F /* AppDelegate.swift */,
-				4E2301232220BAD1008FDA8F /* ViewController.swift */,
 				4E2301252220BAD1008FDA8F /* Main.storyboard */,
 				4E2301282220BAD3008FDA8F /* Assets.xcassets */,
 				4E23012A2220BAD3008FDA8F /* LaunchScreen.storyboard */,
@@ -94,6 +99,23 @@
 				4E2301382220BAD3008FDA8F /* Info.plist */,
 			);
 			path = SpaceTraderiOSTests;
+			sourceTree = "<group>";
+		};
+		4E2301412220BD2E008FDA8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E2301232220BAD1008FDA8F /* StartScreenViewController.swift */,
+				4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E2301422220BF62008FDA8F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4E2301452220C650008FDA8F /* Player.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2301242220BAD1008FDA8F /* ViewController.swift in Sources */,
+				4E2301462220C650008FDA8F /* Player.swift in Sources */,
+				4E2301242220BAD1008FDA8F /* StartScreenViewController.swift in Sources */,
 				4E2301222220BAD1008FDA8F /* AppDelegate.swift in Sources */,
+				4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
