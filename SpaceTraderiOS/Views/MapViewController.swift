@@ -12,6 +12,7 @@ import UIKit
 class MapViewController: UIViewController {
     
     var planets = game.getPlanets()
+    var planetImgKey: String = ""
     
     @IBOutlet var planet1Img: UIImageView!
     @IBOutlet var planet2Img: UIImageView!
@@ -58,4 +59,58 @@ class MapViewController: UIViewController {
         planet10Img.frame = CGRect(x: planets[9].getLocation().0, y: planets[9].getLocation().1, width: 50, height: 50)
     }
     
+    @IBAction func p1Selected(_ sender: Any) {
+        planetImgKey = "planet01"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p2Selected(_ sender: Any) {
+        planetImgKey = "planet02"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p3Selected(_ sender: Any) {
+        planetImgKey = "planet03"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p4Selected(_ sender: Any) {
+        planetImgKey = "planet04"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p5Selected(_ sender: Any) {
+        planetImgKey = "planet05"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p6Selected(_ sender: Any) {
+        planetImgKey = "planet06"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p7Selected(_ sender: Any) {
+        planetImgKey = "planet07"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    @IBAction func p8Selected(_ sender: Any) {
+        planetImgKey = "planet08"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    @IBAction func p9Selected(_ sender: Any) {
+        planetImgKey = "planet09"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func p10Selected(_ sender: Any) {
+        planetImgKey = "planet10"
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MainScreenViewController {
+            destination.planetImgKey = planetImgKey
+        }
+    }
 }

@@ -283,6 +283,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Star Background" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-nX-rGz" userLabel="Star Background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3qy-9p-dp4" userLabel="Planet Image">
+                                <rect key="frame" x="38.5" y="226" width="337" height="304"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="Mmm-ds-cEY"/>
+                                    <constraint firstAttribute="width" constant="337" id="ujB-cq-iwq"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcy-QV-ELm">
                                 <rect key="frame" x="52" y="742" width="55" height="53"/>
                                 <constraints>
@@ -362,6 +369,7 @@
                             <constraint firstItem="I9E-tl-Gmd" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="10" id="1Cs-bs-4EE"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" id="5dG-SN-BGt"/>
                             <constraint firstAttribute="trailing" secondItem="O5A-nX-rGz" secondAttribute="trailing" id="5ev-mL-zE5"/>
+                            <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="182" id="7Qh-3W-Vxp"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="sH7-Kr-oPt" secondAttribute="bottom" constant="19" id="ATg-db-VBR"/>
                             <constraint firstItem="cYD-Zb-our" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="57" id="EM1-sJ-hl2"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="trailing" secondItem="yS7-iv-dBl" secondAttribute="trailing" constant="40" id="ERU-NG-uEo"/>
@@ -373,6 +381,7 @@
                             <constraint firstItem="sH7-Kr-oPt" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="65" id="ZXQ-WN-5WX"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="trailing" secondItem="ZzH-bw-Kfj" secondAttribute="trailing" id="bcJ-1Q-nzQ"/>
                             <constraint firstItem="lcy-QV-ELm" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="52" id="d8I-kN-AO0"/>
+                            <constraint firstItem="3qy-9p-dp4" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="eaz-cO-HOl"/>
                             <constraint firstItem="kNS-Wm-xYB" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="52" id="npD-nY-m1U"/>
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="top" secondItem="qYh-vV-crt" secondAttribute="top" id="ueY-pR-URv"/>
                             <constraint firstItem="kNS-Wm-xYB" firstAttribute="bottom" secondItem="ZzH-bw-Kfj" secondAttribute="bottom" id="ux2-Ga-cRv"/>
@@ -383,6 +392,7 @@
                     </view>
                     <connections>
                         <outlet property="creditsLabel" destination="yS7-iv-dBl" id="Zos-9a-hFm"/>
+                        <outlet property="planetImg" destination="3qy-9p-dp4" id="02h-hA-Dh4"/>
                         <outlet property="usernameLabel" destination="I9E-tl-Gmd" id="pUl-6H-ae0"/>
                     </connections>
                 </viewController>
@@ -401,45 +411,85 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Grid3" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-fu-ypi" userLabel="Map Grid Background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet07" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-pX-jtF" userLabel="Planet 1">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet07" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-pX-jtF" userLabel="Planet 1">
                                 <rect key="frame" x="48" y="139" width="97" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ev8-xi-2nO" appends="YES" id="0mT-RH-TF9"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-gp-u4q" userLabel="Planet 3">
-                                <rect key="frame" x="56" y="530" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-yv-LeM" userLabel="Planet 4">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="G79-XE-HPB" userLabel="Planet 5">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-aP-LNf" userLabel="Planet 6">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oA-gvp" userLabel="Planet 7">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="itE-ii-lA7" userLabel="Planet 8">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="Fqe-HE-ibk" userLabel="Planet 9">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="5gh-28-BxT" userLabel="Planet 10">
-                                <rect key="frame" x="152" y="400" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet09" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-tS-0ej" userLabel="Planet 2">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet09" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-tS-0ej" userLabel="Planet 2">
                                 <rect key="frame" x="280" y="352" width="73" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="czK-bM-RdU" appends="YES" id="Pbk-Q5-mZe"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet06" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-gp-u4q" userLabel="Planet 3">
+                                <rect key="frame" x="56" y="530" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iUT-Ey-vNP" appends="YES" id="dJS-Ew-VXV"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet01" translatesAutoresizingMaskIntoConstraints="NO" id="G79-XE-HPB" userLabel="Planet 5">
+                                <rect key="frame" x="243" y="91" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nac-Di-NTf" appends="YES" id="4WH-7l-og6"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet09" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-aP-LNf" userLabel="Planet 6">
+                                <rect key="frame" x="56" y="671" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZWB-qU-7Gg" appends="YES" id="PCi-4O-U1c"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet08" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oA-gvp" userLabel="Planet 7">
+                                <rect key="frame" x="219" y="613" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5UH-K2-fkC" appends="YES" id="Cbw-Vm-ieg"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet03" translatesAutoresizingMaskIntoConstraints="NO" id="itE-ii-lA7" userLabel="Planet 8">
+                                <rect key="frame" x="56" y="287" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="a4E-pp-uQ1" appends="YES" id="YcF-4X-gAa"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet05" translatesAutoresizingMaskIntoConstraints="NO" id="Fqe-HE-ibk" userLabel="Planet 9">
+                                <rect key="frame" x="270" y="467" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ytl-Fn-d7G" appends="YES" id="TCW-UV-8jY"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet02" translatesAutoresizingMaskIntoConstraints="NO" id="5gh-28-BxT" userLabel="Planet 10">
+                                <rect key="frame" x="183" y="235" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1RK-ME-Otv" appends="YES" id="Qbp-ZL-vm2"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet04" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-yv-LeM" userLabel="Planet 4">
+                                <rect key="frame" x="141" y="391" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qAD-N0-RTf" appends="YES" id="zog-bc-xES"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -462,9 +512,60 @@
                         <outlet property="planet7Img" destination="0gX-oA-gvp" id="NAW-6G-X0a"/>
                         <outlet property="planet8Img" destination="itE-ii-lA7" id="aSp-iX-kez"/>
                         <outlet property="planet9Img" destination="Fqe-HE-ibk" id="i54-X0-htb"/>
+                        <segue destination="qmi-Am-Wbn" kind="show" identifier="maptomain" id="IkE-1c-tfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTI-iR-nhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ev8-xi-2nO" userLabel="P1 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p1Selected:" destination="Y7n-ab-JJi" id="rLZ-F4-hHz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="czK-bM-RdU" userLabel="P2 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p2Selected:" destination="Y7n-ab-JJi" id="Wh5-aq-vCo"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="iUT-Ey-vNP" userLabel="P3 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p3Selected:" destination="Y7n-ab-JJi" id="ehO-O2-WMr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qAD-N0-RTf" userLabel="P4 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p4Selected:" destination="Y7n-ab-JJi" id="Esl-bx-pXT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nac-Di-NTf" userLabel="P5 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p5Selected:" destination="Y7n-ab-JJi" id="kZJ-sJ-JuH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZWB-qU-7Gg" userLabel="P6 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p6Selected:" destination="Y7n-ab-JJi" id="IvS-qB-kRd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5UH-K2-fkC" userLabel="P7 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p7Selected:" destination="Y7n-ab-JJi" id="TMg-fT-AHi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="a4E-pp-uQ1" userLabel="P8 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p8Selected:" destination="Y7n-ab-JJi" id="UtG-ZI-G7v"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Ytl-Fn-d7G" userLabel="P9 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p9Selected:" destination="Y7n-ab-JJi" id="NsL-ks-4b0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1RK-ME-Otv" userLabel="P10 Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="p10Selected:" destination="Y7n-ab-JJi" id="1fN-8B-b7W"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3050.7246376811595" y="192.85714285714286"/>
         </scene>
@@ -474,9 +575,18 @@
         <image name="Space Trader Background" width="392" height="699"/>
         <image name="Star Background" width="391" height="697"/>
         <image name="blue-button-icon-png-8" width="315.32846069335938" height="315.32846069335938"/>
+        <image name="planet01" width="3000" height="3000"/>
+        <image name="planet02" width="2000" height="2000"/>
+        <image name="planet03" width="4000" height="4000"/>
+        <image name="planet04" width="4000" height="4000"/>
+        <image name="planet05" width="3000" height="3000"/>
+        <image name="planet06" width="4000" height="4000"/>
         <image name="planet07" width="3000" height="3000"/>
+        <image name="planet08" width="3000" height="3000"/>
         <image name="planet09" width="2000" height="2000"/>
-        <image name="planet17" width="4000" height="4000"/>
         <image name="tech_HUD_simplified" width="686" height="886"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IkE-1c-tfB"/>
+    </inferredMetricsTieBreakers>
 </document>
