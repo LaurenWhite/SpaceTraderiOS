@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qmi-Am-Wbn">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -390,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="198.88392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="zXb-x4-icP">
             <objects>
-                <viewController id="Y7n-ab-JJi" sceneMemberID="viewController">
+                <viewController id="Y7n-ab-JJi" customClass="MapViewController" customModule="SpaceTraderiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJn-rt-eh7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,15 +401,43 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Grid3" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-fu-ypi" userLabel="Map Grid Background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet07" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-pX-jtF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet07" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-pX-jtF" userLabel="Planet 1">
                                 <rect key="frame" x="48" y="139" width="97" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-gp-u4q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-gp-u4q" userLabel="Planet 3">
                                 <rect key="frame" x="56" y="530" width="110" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet09" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-tS-0ej">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-yv-LeM" userLabel="Planet 4">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="G79-XE-HPB" userLabel="Planet 5">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-aP-LNf" userLabel="Planet 6">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-oA-gvp" userLabel="Planet 7">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="itE-ii-lA7" userLabel="Planet 8">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="Fqe-HE-ibk" userLabel="Planet 9">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet17" translatesAutoresizingMaskIntoConstraints="NO" id="5gh-28-BxT" userLabel="Planet 10">
+                                <rect key="frame" x="152" y="400" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet09" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-tS-0ej" userLabel="Planet 2">
                                 <rect key="frame" x="280" y="352" width="73" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -423,6 +451,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yNZ-pc-FAc"/>
                     </view>
+                    <connections>
+                        <outlet property="planet10Img" destination="5gh-28-BxT" id="P9W-ss-RqL"/>
+                        <outlet property="planet1Img" destination="2Gs-pX-jtF" id="v4j-JY-7DX"/>
+                        <outlet property="planet2Img" destination="Odw-tS-0ej" id="OHE-fG-ZAb"/>
+                        <outlet property="planet3Img" destination="q9d-gp-u4q" id="KUs-YH-EsD"/>
+                        <outlet property="planet4Img" destination="rQd-yv-LeM" id="BjV-nv-yUk"/>
+                        <outlet property="planet5Img" destination="G79-XE-HPB" id="IeN-Vp-Eum"/>
+                        <outlet property="planet6Img" destination="xOc-aP-LNf" id="MSn-8e-6Px"/>
+                        <outlet property="planet7Img" destination="0gX-oA-gvp" id="NAW-6G-X0a"/>
+                        <outlet property="planet8Img" destination="itE-ii-lA7" id="aSp-iX-kez"/>
+                        <outlet property="planet9Img" destination="Fqe-HE-ibk" id="i54-X0-htb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTI-iR-nhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,7 +475,7 @@
         <image name="Star Background" width="391" height="697"/>
         <image name="blue-button-icon-png-8" width="315.32846069335938" height="315.32846069335938"/>
         <image name="planet07" width="3000" height="3000"/>
-        <image name="planet09" width="4000" height="4000"/>
+        <image name="planet09" width="2000" height="2000"/>
         <image name="planet17" width="4000" height="4000"/>
         <image name="tech_HUD_simplified" width="686" height="886"/>
     </resources>

@@ -20,6 +20,7 @@
 		4E3FCCEB222790C4009A63A2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEA222790C4009A63A2 /* Planet.swift */; };
 		4E3FCCED22279529009A63A2 /* TechLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEC22279529009A63A2 /* TechLevel.swift */; };
 		4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEE222796B7009A63A2 /* Resource.swift */; };
+		4E3FCCF122279A16009A63A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF022279A16009A63A2 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		4E3FCCEA222790C4009A63A2 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		4E3FCCEC22279529009A63A2 /* TechLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechLevel.swift; sourceTree = "<group>"; };
 		4E3FCCEE222796B7009A63A2 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		4E3FCCF022279A16009A63A2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				4E3FCCEA222790C4009A63A2 /* Planet.swift */,
 				4E3FCCEC22279529009A63A2 /* TechLevel.swift */,
 				4E3FCCEE222796B7009A63A2 /* Resource.swift */,
+				4E3FCCF022279A16009A63A2 /* Game.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */,
+				4E3FCCF122279A16009A63A2 /* Game.swift in Sources */,
 				4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */,
 				4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */,
 				4E2301462220C650008FDA8F /* Player.swift in Sources */,

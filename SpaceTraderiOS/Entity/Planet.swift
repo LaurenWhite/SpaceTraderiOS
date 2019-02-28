@@ -11,6 +11,8 @@ import Foundation
 var availableNames = ["Nix", "Morag", "Xena", "Nobiru", "Vesperia", "Xillia", "Ventus",
                       "Lapis", "Altair", "Zeno"]
 
+var existingCoordinates: [(Int, Int)] = []
+
 class Planet {
     
     // ATTRIBUTES
@@ -25,8 +27,8 @@ class Planet {
     
     // INITIALIZER
     init() {
-        name = chooseName(index: Int.random(in: 0...9))
-        location = (Int.random(in: 0...100), Int.random(in: 0...200))
+        name = chooseName(index: Int.random(in: 0..<availableNames.count))
+        location = generateLocation()
         techLevel = TechLevel(rawValue: Int.random(in: 0...7)) ?? TechLevel.PRE_AGRICULTURE
         resource = Resource.allCases.randomElement() ?? Resource.NON_SPECIAL_RESOURCES
         traderEncounterChance = techLevel.rawValue + 2
@@ -37,7 +39,7 @@ class Planet {
     
     // GETTERS
     public func getName() -> String { return name }
-    public func getlocation() -> (Int, Int) { return location }
+    public func getLocation() -> (Int, Int) { return location }
     public func getTechLevel() -> TechLevel { return techLevel }
     public func getResource() -> Resource { return resource }
     public func getTraderEC() -> Int { return traderEncounterChance }
@@ -49,4 +51,25 @@ private func chooseName(index: Int) -> String {
     let name = availableNames[index]
     availableNames.remove(at: index)
     return name
+}
+
+private func generateLocation() -> (Int, Int) {
+    var randomLocation = (Int.random(in: 50...360), Int.random(in: 50...760))
+    while(hasOverlap(testLocation: randomLocation)) {
+        randomLocation = (Int.random(in: 50...360), Int.random(in: 50...760))
+    }
+    existingCoordinates.append(randomLocation)
+    return randomLocation
+}
+
+private func hasOverlap(testLocation: (Int, Int)) -> Bool {
+    for coordinate in existingCoordinates {
+        if(abs(testLocation.0 - coordinate.0) < 25) {
+            return true
+        }
+        if(abs(testLocation.1 - coordinate.1) < 25) {
+            return true
+        }
+    }
+    return false
 }
