@@ -38,7 +38,7 @@ private func generatePlanets() -> [Planet] {
 
 private func printPlanets(planets: [Planet]) {
     for planet in planets {
-        print(planet.getName() + " \(planet.getLocation())")
+        print(planet.getName() + " \(planet.getLocation())" + " TL:\(planet.getTechLevel())" + " R:\(planet.getResource())")
     }
 }
 

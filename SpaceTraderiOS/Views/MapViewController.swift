@@ -12,8 +12,10 @@ import UIKit
 class MapViewController: UIViewController {
     
     var planets = game.getPlanets()
-    var planetImgKey: String = ""
+    var planetImgKey: String? = nil
     var selectedPlanetName: String = ""
+    var currentPlanetName: String? = ""
+    var newKey: String = ""
     var fuelNeeded: Int = 0
     var distance: Int = 0
     
@@ -41,6 +43,10 @@ class MapViewController: UIViewController {
         displayAtLocation()
     }
     
+    @IBAction func backButtonSelected(_ sender: Any) {
+        guard travelPopUpView.isHidden else { return }
+        self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
     private func updateConfirmationMessage() {
         confirmationTextView.text = "Confirmation: Travel to \(selectedPlanetName) for \(distance) parsecs using \(fuelNeeded) gallons of fuel?"
     }
@@ -72,68 +78,68 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func p1Selected(_ sender: Any) {
-        planetImgKey = "planet01"
+        newKey = "planet01"
         selectedPlanetName = planets[0].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p2Selected(_ sender: Any) {
-        planetImgKey = "planet02"
+        newKey = "planet02"
         selectedPlanetName = planets[1].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p3Selected(_ sender: Any) {
-        planetImgKey = "planet03"
+        newKey = "planet03"
         selectedPlanetName = planets[2].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p4Selected(_ sender: Any) {
-        planetImgKey = "planet04"
+        newKey = "planet04"
         selectedPlanetName = planets[3].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p5Selected(_ sender: Any) {
-        planetImgKey = "planet05"
+        newKey = "planet05"
         selectedPlanetName = planets[4].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p6Selected(_ sender: Any) {
-        planetImgKey = "planet06"
+        newKey = "planet06"
         selectedPlanetName = planets[5].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p7Selected(_ sender: Any) {
-        planetImgKey = "planet07"
+        newKey = "planet07"
         selectedPlanetName = planets[6].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     @IBAction func p8Selected(_ sender: Any) {
-        planetImgKey = "planet08"
+        newKey = "planet08"
         selectedPlanetName = planets[7].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     @IBAction func p9Selected(_ sender: Any) {
-        planetImgKey = "planet09"
+        newKey = "planet09"
         selectedPlanetName = planets[8].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
     }
     
     @IBAction func p10Selected(_ sender: Any) {
-        planetImgKey = "planet10"
+        newKey = "planet10"
         selectedPlanetName = planets[9].getName()
         updateConfirmationMessage()
         travelPopUpView.isHidden = false
@@ -142,6 +148,8 @@ class MapViewController: UIViewController {
     
     @IBAction func confrimTravelSelected(_ sender: Any) {
         // Check if you have enough fuel
+        planetImgKey = newKey
+        currentPlanetName = selectedPlanetName
         self.performSegue(withIdentifier: "maptomain", sender: nil)
     }
     
@@ -153,6 +161,7 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MainScreenViewController {
             destination.planetImgKey = planetImgKey
+            destination.planetName = currentPlanetName
         }
     }
 }
