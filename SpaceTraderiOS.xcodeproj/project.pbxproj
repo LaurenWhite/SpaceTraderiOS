@@ -15,6 +15,11 @@
 		4E2301372220BAD3008FDA8F /* SpaceTraderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301362220BAD3008FDA8F /* SpaceTraderiOSTests.swift */; };
 		4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */; };
 		4E2301462220C650008FDA8F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301452220C650008FDA8F /* Player.swift */; };
+		4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */; };
+		4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCE822278F0D009A63A2 /* MapViewController.swift */; };
+		4E3FCCEB222790C4009A63A2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEA222790C4009A63A2 /* Planet.swift */; };
+		4E3FCCED22279529009A63A2 /* TechLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEC22279529009A63A2 /* TechLevel.swift */; };
+		4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEE222796B7009A63A2 /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		4E2301382220BAD3008FDA8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationViewController.swift; sourceTree = "<group>"; };
 		4E2301452220C650008FDA8F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		4E3FCCE822278F0D009A63A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4E3FCCEA222790C4009A63A2 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		4E3FCCEC22279529009A63A2 /* TechLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechLevel.swift; sourceTree = "<group>"; };
+		4E3FCCEE222796B7009A63A2 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,8 @@
 			children = (
 				4E2301232220BAD1008FDA8F /* StartScreenViewController.swift */,
 				4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */,
+				4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */,
+				4E3FCCE822278F0D009A63A2 /* MapViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				4E2301452220C650008FDA8F /* Player.swift */,
+				4E3FCCEA222790C4009A63A2 /* Planet.swift */,
+				4E3FCCEC22279529009A63A2 /* TechLevel.swift */,
+				4E3FCCEE222796B7009A63A2 /* Resource.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -219,9 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */,
+				4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */,
+				4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */,
 				4E2301462220C650008FDA8F /* Player.swift in Sources */,
 				4E2301242220BAD1008FDA8F /* StartScreenViewController.swift in Sources */,
+				4E3FCCEB222790C4009A63A2 /* Planet.swift in Sources */,
 				4E2301222220BAD1008FDA8F /* AppDelegate.swift in Sources */,
+				4E3FCCED22279529009A63A2 /* TechLevel.swift in Sources */,
 				4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

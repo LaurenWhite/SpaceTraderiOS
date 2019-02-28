@@ -39,6 +39,8 @@ class Player {
     public func getFighterPoints() -> Int { return fighterPoints }
     public func getTraderPoints() -> Int { return traderPoints }
     public func getEngineerPoints() -> Int { return engineerPoints }
+    public func getCredits() -> Int { return credits }
+    public func getSpaceship() -> String { return spaceship }
     
     public func setName(newName: String) { name = newName }
     public func setAvailableSkillPoints(newPoints: Int) { availableSkillPoints = newPoints }
@@ -46,4 +48,6 @@ class Player {
     public func setFighterPoints(newPoints: Int) { fighterPoints = newPoints }
     public func setTraderPoints(newPoints: Int) { traderPoints = newPoints }
     public func setEngineerPoints(newPoints: Int) { engineerPoints = newPoints }
+    public func setCredits(newCredits: Int) { credits = newCredits }
+    public func setSpaceShip(newSpaceship: String) { spaceship = newSpaceship }
 }
