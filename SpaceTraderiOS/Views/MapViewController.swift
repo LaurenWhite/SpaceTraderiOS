@@ -13,6 +13,9 @@ class MapViewController: UIViewController {
     
     var planets = game.getPlanets()
     var planetImgKey: String = ""
+    var selectedPlanetName: String = ""
+    var fuelNeeded: Int = 0
+    var distance: Int = 0
     
     @IBOutlet var planet1Img: UIImageView!
     @IBOutlet var planet2Img: UIImageView!
@@ -25,12 +28,21 @@ class MapViewController: UIViewController {
     @IBOutlet var planet9Img: UIImageView!
     @IBOutlet var planet10Img: UIImageView!
     
+    @IBOutlet var travelPopUpView: DesignableView!
+    
+    @IBOutlet var confirmationTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        travelPopUpView.isHidden = true
+        updateConfirmationMessage()
         setImages()
         displayAtLocation()
+    }
+    
+    private func updateConfirmationMessage() {
+        confirmationTextView.text = "Confirmation: Travel to \(selectedPlanetName) for \(distance) parsecs using \(fuelNeeded) gallons of fuel?"
     }
     
     private func setImages() {
@@ -61,50 +73,80 @@ class MapViewController: UIViewController {
     
     @IBAction func p1Selected(_ sender: Any) {
         planetImgKey = "planet01"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[0].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p2Selected(_ sender: Any) {
         planetImgKey = "planet02"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[1].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p3Selected(_ sender: Any) {
         planetImgKey = "planet03"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[2].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p4Selected(_ sender: Any) {
         planetImgKey = "planet04"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[3].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p5Selected(_ sender: Any) {
         planetImgKey = "planet05"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[4].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p6Selected(_ sender: Any) {
         planetImgKey = "planet06"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[5].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p7Selected(_ sender: Any) {
         planetImgKey = "planet07"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[6].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     @IBAction func p8Selected(_ sender: Any) {
         planetImgKey = "planet08"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[7].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     @IBAction func p9Selected(_ sender: Any) {
         planetImgKey = "planet09"
-        self.performSegue(withIdentifier: "maptomain", sender: nil)
+        selectedPlanetName = planets[8].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
     }
     
     @IBAction func p10Selected(_ sender: Any) {
         planetImgKey = "planet10"
+        selectedPlanetName = planets[9].getName()
+        updateConfirmationMessage()
+        travelPopUpView.isHidden = false
+        
+    }
+    
+    @IBAction func confrimTravelSelected(_ sender: Any) {
+        // Check if you have enough fuel
         self.performSegue(withIdentifier: "maptomain", sender: nil)
+    }
+    
+    @IBAction func cancelTravelSelected(_ sender: Any) {
+        travelPopUpView.isHidden = true
     }
     
     

@@ -290,6 +290,13 @@
                                     <constraint firstAttribute="width" constant="337" id="ujB-cq-iwq"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Gm-hn-ntx" userLabel="Encounter Image">
+                                <rect key="frame" x="106.5" y="353" width="201" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="4In-mP-ADg"/>
+                                    <constraint firstAttribute="height" constant="148" id="NAU-jQ-9IQ"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcy-QV-ELm">
                                 <rect key="frame" x="52" y="742" width="55" height="53"/>
                                 <constraints>
@@ -313,11 +320,26 @@
                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Fuel Up"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-v0-Wd3">
-                                <rect key="frame" x="177" y="742" width="76" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Map"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-v0-Wd3">
+                                <rect key="frame" x="177" y="757" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="IYf-M0-PY0"/>
+                                    <constraint firstAttribute="width" constant="65" id="sKG-2f-Jd4"/>
+                                </constraints>
+                                <state key="normal" title="Map">
+                                    <color key="titleColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Y7n-ab-JJi" kind="show" id="yWr-qI-dFz"/>
                                 </connections>
@@ -354,13 +376,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9E-tl-Gmd" userLabel="Username Label">
                                 <rect key="frame" x="40" y="54" width="61.5" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-iv-dBl" userLabel="Credits Label">
                                 <rect key="frame" x="309" y="54" width="65" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -369,6 +391,7 @@
                             <constraint firstItem="I9E-tl-Gmd" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="10" id="1Cs-bs-4EE"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" id="5dG-SN-BGt"/>
                             <constraint firstAttribute="trailing" secondItem="O5A-nX-rGz" secondAttribute="trailing" id="5ev-mL-zE5"/>
+                            <constraint firstItem="hSn-v0-Wd3" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="177" id="5qt-2n-2Pf"/>
                             <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="182" id="7Qh-3W-Vxp"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="sH7-Kr-oPt" secondAttribute="bottom" constant="19" id="ATg-db-VBR"/>
                             <constraint firstItem="cYD-Zb-our" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="57" id="EM1-sJ-hl2"/>
@@ -377,11 +400,14 @@
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="leading" secondItem="qYh-vV-crt" secondAttribute="leading" id="Hcz-ab-h7L"/>
                             <constraint firstItem="yS7-iv-dBl" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="10" id="LNA-Js-Zrq"/>
                             <constraint firstAttribute="bottom" secondItem="O5A-nX-rGz" secondAttribute="bottom" id="MGs-EC-UBw"/>
+                            <constraint firstItem="8Gm-hn-ntx" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="Q7V-HQ-plm"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="hSn-v0-Wd3" secondAttribute="bottom" constant="40" id="WjI-Q3-VWc"/>
                             <constraint firstItem="I9E-tl-Gmd" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="40" id="X95-j5-UcM"/>
                             <constraint firstItem="sH7-Kr-oPt" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="65" id="ZXQ-WN-5WX"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="trailing" secondItem="ZzH-bw-Kfj" secondAttribute="trailing" id="bcJ-1Q-nzQ"/>
                             <constraint firstItem="lcy-QV-ELm" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="52" id="d8I-kN-AO0"/>
                             <constraint firstItem="3qy-9p-dp4" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="eaz-cO-HOl"/>
+                            <constraint firstItem="8Gm-hn-ntx" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="309" id="kgs-R5-BRi"/>
                             <constraint firstItem="kNS-Wm-xYB" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="52" id="npD-nY-m1U"/>
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="top" secondItem="qYh-vV-crt" secondAttribute="top" id="ueY-pR-URv"/>
                             <constraint firstItem="kNS-Wm-xYB" firstAttribute="bottom" secondItem="ZzH-bw-Kfj" secondAttribute="bottom" id="ux2-Ga-cRv"/>
@@ -392,6 +418,7 @@
                     </view>
                     <connections>
                         <outlet property="creditsLabel" destination="yS7-iv-dBl" id="Zos-9a-hFm"/>
+                        <outlet property="encounterImg" destination="8Gm-hn-ntx" id="TmQ-Zj-2em"/>
                         <outlet property="planetImg" destination="3qy-9p-dp4" id="02h-hA-Dh4"/>
                         <outlet property="usernameLabel" destination="I9E-tl-Gmd" id="pUl-6H-ae0"/>
                     </connections>
@@ -433,6 +460,14 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="iUT-Ey-vNP" appends="YES" id="dJS-Ew-VXV"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet04" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-yv-LeM" userLabel="Planet 4">
+                                <rect key="frame" x="141" y="391" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qAD-N0-RTf" appends="YES" id="zog-bc-xES"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet01" translatesAutoresizingMaskIntoConstraints="NO" id="G79-XE-HPB" userLabel="Planet 5">
@@ -483,14 +518,103 @@
                                     <outletCollection property="gestureRecognizers" destination="1RK-ME-Otv" appends="YES" id="Qbp-ZL-vm2"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet04" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-yv-LeM" userLabel="Planet 4">
-                                <rect key="frame" x="141" y="391" width="110" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="qAD-N0-RTf" appends="YES" id="zog-bc-xES"/>
-                                </connections>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E8-Kg-kUZ" userLabel="Travel View Pop Up" customClass="DesignableView" customModule="SpaceTraderiOS" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="304" width="295" height="179"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqw-q9-DH6" userLabel="Confirmation Text View">
+                                        <rect key="frame" x="22" y="8" width="251" height="80.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Confirmation: Travel to [planet name] for [#] parsecs using [#] gallons of fuel?">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="AndaleMono"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYo-dQ-dZD">
+                                        <rect key="frame" x="30" y="119" width="60" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="8L8-Id-9oq"/>
+                                            <constraint firstAttribute="width" constant="60" id="CTL-1r-ETZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confrimTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="va4-Ky-NGM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZl-88-KAe">
+                                        <rect key="frame" x="195" y="119" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="GH0-An-aje"/>
+                                            <constraint firstAttribute="width" constant="70" id="WYI-Dg-gra"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="DoE-q4-S4Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dYo-dQ-dZD" firstAttribute="leading" secondItem="8E8-Kg-kUZ" secondAttribute="leading" constant="30" id="2oc-Ts-jbc"/>
+                                    <constraint firstItem="dqw-q9-DH6" firstAttribute="leading" secondItem="8E8-Kg-kUZ" secondAttribute="leading" constant="22" id="BDo-oC-y3C"/>
+                                    <constraint firstAttribute="height" constant="179" id="UaA-5Z-nZy"/>
+                                    <constraint firstAttribute="trailing" secondItem="oZl-88-KAe" secondAttribute="trailing" constant="30" id="VqN-FV-3fW"/>
+                                    <constraint firstAttribute="bottom" secondItem="dYo-dQ-dZD" secondAttribute="bottom" constant="25" id="bjh-XH-lnb"/>
+                                    <constraint firstAttribute="bottom" secondItem="oZl-88-KAe" secondAttribute="bottom" constant="25" id="c6Z-Xc-Iwc"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqw-q9-DH6" secondAttribute="trailing" constant="22" id="cHQ-1z-7HW"/>
+                                    <constraint firstAttribute="width" constant="295" id="jG5-gz-uAq"/>
+                                    <constraint firstItem="dqw-q9-DH6" firstAttribute="top" secondItem="8E8-Kg-kUZ" secondAttribute="top" constant="8" id="o6F-Cd-1Vh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.38545760756742825" green="0.70036319701598948" blue="0.84003025530503983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -498,10 +622,13 @@
                             <constraint firstAttribute="trailing" secondItem="Mot-fu-ypi" secondAttribute="trailing" id="QeP-fc-Mc1"/>
                             <constraint firstAttribute="bottom" secondItem="Mot-fu-ypi" secondAttribute="bottom" id="YVa-RC-qZM"/>
                             <constraint firstItem="Mot-fu-ypi" firstAttribute="leading" secondItem="yJn-rt-eh7" secondAttribute="leading" id="Zku-Kh-DnB"/>
+                            <constraint firstItem="8E8-Kg-kUZ" firstAttribute="centerX" secondItem="yJn-rt-eh7" secondAttribute="centerX" id="g65-Nb-mWo"/>
+                            <constraint firstItem="8E8-Kg-kUZ" firstAttribute="top" secondItem="yNZ-pc-FAc" secondAttribute="top" constant="260" id="t2c-wI-jbY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yNZ-pc-FAc"/>
                     </view>
                     <connections>
+                        <outlet property="confirmationTextView" destination="dqw-q9-DH6" id="BCi-30-49Q"/>
                         <outlet property="planet10Img" destination="5gh-28-BxT" id="P9W-ss-RqL"/>
                         <outlet property="planet1Img" destination="2Gs-pX-jtF" id="v4j-JY-7DX"/>
                         <outlet property="planet2Img" destination="Odw-tS-0ej" id="OHE-fG-ZAb"/>
@@ -512,6 +639,7 @@
                         <outlet property="planet7Img" destination="0gX-oA-gvp" id="NAW-6G-X0a"/>
                         <outlet property="planet8Img" destination="itE-ii-lA7" id="aSp-iX-kez"/>
                         <outlet property="planet9Img" destination="Fqe-HE-ibk" id="i54-X0-htb"/>
+                        <outlet property="travelPopUpView" destination="8E8-Kg-kUZ" id="CVU-1f-A4P"/>
                         <segue destination="qmi-Am-Wbn" kind="show" identifier="maptomain" id="IkE-1c-tfB"/>
                     </connections>
                 </viewController>

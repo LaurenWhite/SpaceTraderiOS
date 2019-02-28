@@ -15,6 +15,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var creditsLabel: UILabel!
     @IBOutlet var planetImg: UIImageView!
+    @IBOutlet var encounterImg: UIImageView!
     
     var planetImgKey = ""
     
@@ -25,6 +26,8 @@ class MainScreenViewController: UIViewController {
         usernameLabel.text = player.getName()
         creditsLabel.text = "$\(player.getCredits())"
         planetImg.image = UIImage(named: planetImgKey)
+        //encounterImg.image = UIImage(named: "police")
+        encounterImg.isHidden = true
     }
     
     
