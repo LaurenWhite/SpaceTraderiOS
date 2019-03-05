@@ -15,6 +15,7 @@
 		4E2301372220BAD3008FDA8F /* SpaceTraderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301362220BAD3008FDA8F /* SpaceTraderiOSTests.swift */; };
 		4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */; };
 		4E2301462220C650008FDA8F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2301452220C650008FDA8F /* Player.swift */; };
+		4E33F1222227E789008CC851 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E33F1212227E789008CC851 /* Ship.swift */; };
 		4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */; };
 		4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCE822278F0D009A63A2 /* MapViewController.swift */; };
 		4E3FCCEB222790C4009A63A2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEA222790C4009A63A2 /* Planet.swift */; };
@@ -22,6 +23,7 @@
 		4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCEE222796B7009A63A2 /* Resource.swift */; };
 		4E3FCCF122279A16009A63A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF022279A16009A63A2 /* Game.swift */; };
 		4E3FCCF32227BB1C009A63A2 /* UIView+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */; };
+		4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		4E2301382220BAD3008FDA8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2301432220C046008FDA8F /* UserConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationViewController.swift; sourceTree = "<group>"; };
 		4E2301452220C650008FDA8F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4E33F1212227E789008CC851 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		4E3FCCE822278F0D009A63A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4E3FCCEA222790C4009A63A2 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		4E3FCCEE222796B7009A63A2 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		4E3FCCF022279A16009A63A2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Attributes.swift"; sourceTree = "<group>"; };
+		4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 				4E3FCCEC22279529009A63A2 /* TechLevel.swift */,
 				4E3FCCEE222796B7009A63A2 /* Resource.swift */,
 				4E3FCCF022279A16009A63A2 /* Game.swift */,
+				4E33F1212227E789008CC851 /* Ship.swift */,
+				4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */,
+				4E33F1222227E789008CC851 /* Ship.swift in Sources */,
+				4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */,
 				4E3FCCF122279A16009A63A2 /* Game.swift in Sources */,
 				4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */,
 				4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 
 var player = Player()
 
+
 class UserConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
@@ -36,6 +37,7 @@ class UserConfigurationViewController: UIViewController, UIPickerViewDelegate, U
         self.difficultyPicker.dataSource = self
         
         difficultyData = ["Beginner", "Easy", "Normal", "Hard", "Impossible"]
+        let diff = game.getDifficulty()
     }
     
     

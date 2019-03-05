@@ -20,7 +20,7 @@ class Player {
     
     private var credits: Int
     
-    private var spaceship: String
+    private var spaceship: Ship
     
     init() {
         name = "Name"
@@ -30,7 +30,7 @@ class Player {
         traderPoints = 0
         engineerPoints = 0
         credits = 1000
-        spaceship = "Gnat"
+        spaceship = Ship()
     }
     
     public func getName() -> String { return name }
@@ -40,7 +40,7 @@ class Player {
     public func getTraderPoints() -> Int { return traderPoints }
     public func getEngineerPoints() -> Int { return engineerPoints }
     public func getCredits() -> Int { return credits }
-    public func getSpaceship() -> String { return spaceship }
+    public func getSpaceship() -> Ship { return spaceship }
     
     public func setName(newName: String) { name = newName }
     public func setAvailableSkillPoints(newPoints: Int) { availableSkillPoints = newPoints }
@@ -49,5 +49,5 @@ class Player {
     public func setTraderPoints(newPoints: Int) { traderPoints = newPoints }
     public func setEngineerPoints(newPoints: Int) { engineerPoints = newPoints }
     public func setCredits(newCredits: Int) { credits = newCredits }
-    public func setSpaceShip(newSpaceship: String) { spaceship = newSpaceship }
+    public func setSpaceShip(newSpaceship: Ship) { spaceship = newSpaceship }
 }
