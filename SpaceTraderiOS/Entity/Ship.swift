@@ -11,32 +11,30 @@ import Foundation
 class Ship {
     
     //      ATTRIBUTES      //
-    private var type: String
+    private var type: ShipType
     private var currentLocation: (Int, Int)
-    private var fuel: Double
-    private var mileage: Int  // parsecs per gallon
     private var cargo: [String]
-    private var capacity: Int
-    
+    private var fuel: Double
+
     
     //      INITIALIZER     //
     init() {
-        type = "Gnat"
+        type = Gnat()
         currentLocation = (0,0)
-        fuel = 5
-        mileage = 250
+        fuel = type.fuelCapacity
         cargo = []
-        capacity = 100
     }
     
     
     //      GETTERS     //
-    public func getType() -> String { return type }
+    public func getType() -> ShipType { return type }
     public func getCurrentLocation() -> (Int, Int) { return currentLocation }
     public func getFuel() -> Double { return fuel }
-    public func getMileage() -> Int { return mileage }
+    public func getFuelCapacity() -> Double { return type.fuelCapacity }
+    public func getMileage() -> Int { return type.mileage }
     public func getCargo() -> [String] { return cargo }
-    public func getCapacity() -> Int { return capacity }
+    public func getCargoCapacity() -> Int { return type.cargoCapacity }
+    
     
     //      SETTERS     //
     public func setCurrentLocation(newLocation: (Int, Int)) { currentLocation = newLocation }
@@ -60,15 +58,14 @@ class Ship {
     }
     
     public func calculateFuelNeeded(distance: Double) -> Double {
-        print("RESULT: \((distance / Double(mileage)).rounded(toPlaces: 3))")
-        return (distance / Double(mileage)).rounded(toPlaces: 3)
+        print("RESULT: \((distance / Double(type.mileage)).rounded(toPlaces: 3))")
+        return (distance / Double(type.mileage)).rounded(toPlaces: 3)
     }
     
     
     //      CARGO FUNCTIONS     //
     // ...
 }
-
 
 extension Double {
     /// Rounds the double to decimal places value

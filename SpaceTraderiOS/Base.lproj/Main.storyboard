@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8NO-kY-7z0">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -398,6 +398,9 @@
                                         <color key="value" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="8NO-kY-7z0" kind="show" id="N0w-fX-vaw"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tech_HUD_simplified" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-H2-SNi">
                                 <rect key="frame" x="0.0" y="102" width="414" height="595"/>
@@ -463,6 +466,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtr-Oq-iOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="198.88392857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aFO-Na-pLZ">
+            <objects>
+                <viewController id="8NO-kY-7z0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OKI-Dy-lvY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Star Background" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-C2-p8k" userLabel="Star Background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-eN-yFA" userLabel="Ship Type Label">
+                                <rect key="frame" x="50" y="84" width="78" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mye-p9-rMr">
+                                <rect key="frame" x="50" y="158.5" width="300" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrM-Ux-AWC" userLabel="Fuel Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E2n-T8-LQN">
+                                        <rect key="frame" x="63.5" y="0.0" width="236.5" height="18"/>
+                                        <color key="tintColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="fHW-oP-ROC"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E2n-T8-LQN" firstAttribute="centerY" secondItem="mye-p9-rMr" secondAttribute="centerY" id="1fY-jo-nXn"/>
+                                    <constraint firstItem="E2n-T8-LQN" firstAttribute="leading" secondItem="LrM-Ux-AWC" secondAttribute="trailing" constant="15" id="5aG-N9-qfJ"/>
+                                    <constraint firstAttribute="height" constant="18" id="MDU-u3-iBO"/>
+                                    <constraint firstAttribute="width" constant="300" id="nEE-Id-wbU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mye-p9-rMr" firstAttribute="top" secondItem="O4z-eN-yFA" secondAttribute="bottom" constant="35" id="285-wH-6Pp"/>
+                            <constraint firstItem="Uja-C2-p8k" firstAttribute="leading" secondItem="OKI-Dy-lvY" secondAttribute="leading" id="CGo-6c-jHo"/>
+                            <constraint firstItem="mye-p9-rMr" firstAttribute="leading" secondItem="lHP-Pi-iwG" secondAttribute="leading" constant="50" id="Htw-dL-M2H"/>
+                            <constraint firstAttribute="trailing" secondItem="Uja-C2-p8k" secondAttribute="trailing" id="Oto-Pc-6pF"/>
+                            <constraint firstItem="Uja-C2-p8k" firstAttribute="top" secondItem="OKI-Dy-lvY" secondAttribute="top" id="P9w-ox-qT1"/>
+                            <constraint firstItem="O4z-eN-yFA" firstAttribute="top" secondItem="lHP-Pi-iwG" secondAttribute="top" constant="40" id="gK0-xg-qV8"/>
+                            <constraint firstItem="O4z-eN-yFA" firstAttribute="leading" secondItem="lHP-Pi-iwG" secondAttribute="leading" constant="50" id="mvZ-jI-yc6"/>
+                            <constraint firstItem="Uja-C2-p8k" firstAttribute="trailing" secondItem="lHP-Pi-iwG" secondAttribute="trailing" id="tCl-kV-5tx"/>
+                            <constraint firstAttribute="bottom" secondItem="Uja-C2-p8k" secondAttribute="bottom" id="vKz-4I-L9C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lHP-Pi-iwG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rv4-LV-7x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3060.8695652173915" y="547.76785714285711"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="zXb-x4-icP">
@@ -782,6 +846,6 @@
         <image name="tech_HUD_simplified" width="686" height="886"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IkE-1c-tfB"/>
+        <segue reference="G86-UP-TdS"/>
     </inferredMetricsTieBreakers>
 </document>
