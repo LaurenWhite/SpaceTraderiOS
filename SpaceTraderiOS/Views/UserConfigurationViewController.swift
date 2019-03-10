@@ -32,12 +32,14 @@ class UserConfigurationViewController: UIViewController, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        print("HERE 1!")
         self.difficultyPicker.delegate = self
         self.difficultyPicker.dataSource = self
-        
+        print("HERE 2!")
         difficultyData = ["Beginner", "Easy", "Normal", "Hard", "Impossible"]
+        
         let diff = game.getDifficulty()
+        print("HERE 3!")
     }
     
     

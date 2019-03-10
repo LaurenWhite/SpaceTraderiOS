@@ -12,6 +12,7 @@ var availableNames = ["Nix", "Morag", "Xena", "Nobiru", "Vesperia", "Xillia", "V
                       "Lapis", "Altair", "Zeno"]
 
 var existingCoordinates: [(Int, Int)] = []
+var counter: Int = 0
 
 class Planet {
     
@@ -27,13 +28,17 @@ class Planet {
     
     // INITIALIZER
     init() {
+       
         name = chooseName(index: Int.random(in: 0..<availableNames.count))
         location = generateLocation()
+        print("Location " + String(counter) + " generated!")
         techLevel = TechLevel(rawValue: Int.random(in: 0...7)) ?? TechLevel.PRE_AGRICULTURE
         resource = Resource.allCases.randomElement() ?? Resource.NON_SPECIAL_RESOURCES
         traderEncounterChance = techLevel.rawValue + 2
         policeEncoutnerChance = Int.random(in: 0...10)
         mercenaryEncoutnerChance = 10 - policeEncoutnerChance
+        print("Planet Point " + String(counter))
+        counter += 1
     }
     
     
@@ -55,6 +60,7 @@ private func chooseName(index: Int) -> String {
 
 private func generateLocation() -> (Int, Int) {
     var randomLocation = (Int.random(in: 50...360), Int.random(in: 50...760))
+    
     while(hasOverlap(testLocation: randomLocation)) {
         randomLocation = (Int.random(in: 50...360), Int.random(in: 50...760))
     }

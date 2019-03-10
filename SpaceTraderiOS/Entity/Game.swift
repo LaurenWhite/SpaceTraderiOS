@@ -18,9 +18,11 @@ class Game {
     
     init() {
         planets = generatePlanets()
+        print("Planets Generated!")
         difficulty = "Beginner"
         //instance = self
         printPlanets(planets: planets)
+        print("Planets Printed!")
     }
     
     public func getPlanets() -> [Planet] { return planets }

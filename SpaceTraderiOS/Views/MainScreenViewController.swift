@@ -32,11 +32,20 @@ class MainScreenViewController: UIViewController {
         encounterImg.isHidden = true
     }
     
+
+    @IBAction func planetImgSelected(_ sender: Any) {
+        print("planet clicked!")
+        guard encounterImg.isHidden else { return }
+        self.performSegue(withIdentifier: "maintosurface", sender: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MapViewController {
             destination.planetImgKey = planetImgKey
             destination.currentPlanetName = planetName
+        }
+        if let destination = segue.destination as? PlanetSurfaceViewController {
+            destination.planetImgKey = planetImgKey
         }
     }
     

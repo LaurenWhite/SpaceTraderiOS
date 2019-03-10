@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8NO-kY-7z0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -321,10 +321,14 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3qy-9p-dp4" userLabel="Planet Image">
                                 <rect key="frame" x="38.5" y="226" width="337" height="304"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="Mmm-ds-cEY"/>
                                     <constraint firstAttribute="width" constant="337" id="ujB-cq-iwq"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GPf-fC-vSx" appends="YES" id="Tgc-es-kPL"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Gm-hn-ntx" userLabel="Encounter Image">
                                 <rect key="frame" x="106.5" y="353" width="201" height="148"/>
@@ -404,6 +408,9 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tech_HUD_simplified" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-H2-SNi">
                                 <rect key="frame" x="0.0" y="102" width="414" height="595"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="595" id="PPe-Yt-2Yk"/>
                                 </constraints>
@@ -461,9 +468,15 @@
                         <outlet property="planetImg" destination="3qy-9p-dp4" id="02h-hA-Dh4"/>
                         <outlet property="planetNameLabel" destination="8ba-to-zoB" id="aUr-83-yZU"/>
                         <outlet property="usernameLabel" destination="I9E-tl-Gmd" id="pUl-6H-ae0"/>
+                        <segue destination="Il9-4c-mci" kind="show" identifier="maintosurface" id="1gA-1O-gBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtr-Oq-iOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GPf-fC-vSx" userLabel="Planet Img Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="planetImgSelected:" destination="qmi-Am-Wbn" id="XVj-2n-gs7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="198.88392857142856"/>
         </scene>
@@ -526,7 +539,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rv4-LV-7x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060.8695652173915" y="547.76785714285711"/>
+            <point key="canvasLocation" x="3061" y="1229"/>
+        </scene>
+        <!--Planet Surface View Controller-->
+        <scene sceneID="val-wj-Ya9">
+            <objects>
+                <viewController id="Il9-4c-mci" customClass="PlanetSurfaceViewController" customModule="SpaceTraderiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ah-NB-Oce">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="BrownSurface1" translatesAutoresizingMaskIntoConstraints="NO" id="rUy-qN-mOO" userLabel="Planet Surface Background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rUy-qN-mOO" firstAttribute="leading" secondItem="5ah-NB-Oce" secondAttribute="leading" id="6uK-Pq-VG8"/>
+                            <constraint firstAttribute="bottom" secondItem="rUy-qN-mOO" secondAttribute="bottom" id="POs-aN-HGu"/>
+                            <constraint firstItem="rUy-qN-mOO" firstAttribute="top" secondItem="5ah-NB-Oce" secondAttribute="top" id="Pya-hl-GLN"/>
+                            <constraint firstAttribute="trailing" secondItem="rUy-qN-mOO" secondAttribute="trailing" id="gLB-jw-3Gc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vg6-NT-8eZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="planetSurfaceBackground" destination="rUy-qN-mOO" id="Nr6-E1-lQf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNg-02-2ZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061" y="512"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="zXb-x4-icP">
@@ -831,6 +873,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BrownSurface1" width="301" height="525"/>
         <image name="Grid3" width="600" height="900"/>
         <image name="Space Trader Background" width="392" height="699"/>
         <image name="Star Background" width="391" height="697"/>
@@ -846,6 +889,6 @@
         <image name="tech_HUD_simplified" width="686" height="886"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G86-UP-TdS"/>
+        <segue reference="IkE-1c-tfB"/>
     </inferredMetricsTieBreakers>
 </document>
