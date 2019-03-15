@@ -47,6 +47,7 @@ class MainScreenViewController: UIViewController {
         }
         if let destination = segue.destination as? PlanetSurfaceViewController {
             destination.planetImgKey = planetImgKey
+            destination.planetName = planetName
         }
     }
     

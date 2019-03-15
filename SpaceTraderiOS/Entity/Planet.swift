@@ -21,6 +21,7 @@ class Planet {
     private var location: (Int, Int)
     private var techLevel: TechLevel
     private var resource: Resource
+    private var market: [String:TradeGood]
     private var traderEncounterChance: Int
     private var policeEncoutnerChance: Int
     private var mercenaryEncoutnerChance: Int
@@ -34,6 +35,7 @@ class Planet {
         print("Location " + String(counter) + " generated!")
         techLevel = TechLevel(rawValue: Int.random(in: 0...7)) ?? TechLevel.PRE_AGRICULTURE
         resource = Resource.allCases.randomElement() ?? Resource.NON_SPECIAL_RESOURCES
+        market = [:]
         traderEncounterChance = techLevel.rawValue + 2
         policeEncoutnerChance = Int.random(in: 0...10)
         mercenaryEncoutnerChance = 10 - policeEncoutnerChance

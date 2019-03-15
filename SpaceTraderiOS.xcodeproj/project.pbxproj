@@ -24,6 +24,7 @@
 		4E3FCCF122279A16009A63A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF022279A16009A63A2 /* Game.swift */; };
 		4E3FCCF32227BB1C009A63A2 /* UIView+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */; };
 		4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */; };
+		4EC9A463223B58E800EBA1A6 /* TradeGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9A462223B58E800EBA1A6 /* TradeGood.swift */; };
 		4EED51742234CDBF0075B662 /* PlanetSurfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED51732234CDBF0075B662 /* PlanetSurfaceViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		4E3FCCF022279A16009A63A2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Attributes.swift"; sourceTree = "<group>"; };
 		4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipType.swift; sourceTree = "<group>"; };
+		4EC9A462223B58E800EBA1A6 /* TradeGood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeGood.swift; sourceTree = "<group>"; };
 		4EED51732234CDBF0075B662 /* PlanetSurfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSurfaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				4E3FCCF022279A16009A63A2 /* Game.swift */,
 				4E33F1212227E789008CC851 /* Ship.swift */,
 				4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */,
+				4EC9A462223B58E800EBA1A6 /* TradeGood.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC9A463223B58E800EBA1A6 /* TradeGood.swift in Sources */,
 				4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */,
 				4E33F1222227E789008CC851 /* Ship.swift in Sources */,
 				4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */,
