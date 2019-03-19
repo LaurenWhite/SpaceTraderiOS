@@ -18,3 +18,10 @@ public enum TechLevel: Int {
     case POST_INDUSTRIAL = 6
     case HI_TECH = 7
 }
+
+public func enumToString(tl: TechLevel) -> String {
+    var description = "\(tl)"
+    description = description.replacingOccurrences(of: "_", with: " ")
+    description = description.capitalized
+    return description
+}

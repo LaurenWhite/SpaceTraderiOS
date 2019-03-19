@@ -11,20 +11,24 @@ import UIKit
 
 class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let planets = game.getPlanets()
     
+    var planet: Planet?
     var planetImgKey: String?
     var planetName: String?
     
-    let planets = game.getPlanets()
+    var buyMenuShowing = true
     
     @IBOutlet var planetNameLabel: UILabel!
     @IBOutlet var welcomeMenuView: DesignableView!
     @IBOutlet var menuMessageTextView: UITextView!
+    @IBOutlet var tradeMenuView: DesignableView!
+    
+    @IBOutlet var buySellButton: UIButton!
     
     @IBOutlet var tradeTableView: UITableView!
     
     let sampleGoods = ["Water", "Furs", "Ore"]
-    
     
     let surfaceImgKeys = ["planet01" : "RedSurface1",
                           "planet02" : "BrownSurface1",
@@ -42,16 +46,17 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        planet = planets[extractIndexFromKey(key: planetImgKey) - 1]
+        
         planetSurfaceBackground.image = UIImage(named: surfaceImgKeys[planetImgKey ?? "planet03"] ?? "BrownSurface1")
         planetNameLabel.text = planetName
         
-        let planet = planets[extractIndexFromKey(key: planetImgKey) - 1]
-        menuMessageTextView.text = "Welcome to \(planet.getName())" +
-                                   "\nTech Level: \(planet.getTechLevel())" +
-                                   "\nResource: \(planet.getResource())"
+        setMenuMessage()
         
+        tradeMenuView.isHidden = true
+        buyMenuShowing = true
+        buySellButton.titleLabel?.text = "Buy"
         
-        tradeTableView.isHidden = true
         tradeTableView.delegate = self
         tradeTableView.dataSource = self
     }
@@ -61,13 +66,33 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func tradeGoodsSelected(_ sender: Any) {
-        tradeTableView.isHidden = false
+        tradeMenuView.isHidden = false
     }
     
     
     @IBAction func refuelShipSelected(_ sender: Any) {
     }
     
+    @IBAction func planetGoodsSelected(_ sender: Any) {
+        buyMenuShowing = true
+        buySellButton.titleLabel?.text = "Buy"
+    }
+    
+    @IBAction func myGoodsSelected(_ sender: Any) {
+        buyMenuShowing = false
+        buySellButton.titleLabel?.text = "Sell"
+    }
+    
+    private func setMenuMessage() {
+        guard let planet = planet else { return }
+        
+        let techLevelString = enumToString(tl: planet.getTechLevel())
+        let resourceString = enumToString(resource: planet.getResource())
+        
+        menuMessageTextView.text = "Welcome to \(planet.getName())!" +
+                                    "\nTech Level: \(techLevelString)" +
+                                    "\nResource: \(resourceString)"
+    }
     
     private func extractIndexFromKey(key: String?) -> Int {
         guard let key = key else { return 1 }
@@ -76,15 +101,26 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sampleGoods.count
+        guard let planet = planet else { return 3 }
+        
+        if buyMenuShowing {
+            return planet.getMarket().count
+        } else {
+            return player.getSpaceship().getCargo().count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "tradegooditem", for: indexPath) as! TradeItemCell
         
-        cell.decorate(name: sampleGoods[indexPath.row],
-                      price: 1000,
-                      quantity: 4)
+        guard let planet = planet else { return cell }
+        let market = planet.getMarket()
+        let selectedItem = market[indexPath.row]
+        
+        cell.decorate(name: selectedItem.good.name,
+                      price: selectedItem.price,
+                      quantity: selectedItem.quantity)
         
         return cell
     }

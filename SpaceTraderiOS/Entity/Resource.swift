@@ -23,3 +23,11 @@ public enum Resource: CaseIterable {
     case ARTISTIC
     case WARLIKE
 }
+
+public func enumToString(resource: Resource) -> String {
+    var description = "\(resource)"
+    description = description.replacingOccurrences(of: "_", with: " ")
+    description = description.capitalized
+    return description
+}
+

@@ -8,19 +8,37 @@
 
 import Foundation
 
+
+// Struct for holding trade goods and relevant market information about those goods
 struct MarketItem {
     var good: TradeGood
     var quantity: Int
     var price: Int
+    
+    init(good: TradeGood, techLevelVal: Int) {
+        self.good = good
+        quantity = calculateQuantity(good: good, techLevelVal: techLevelVal)
+        price = good.basePrice + (good.ipl * (techLevelVal - good.mtlp)) + Int.random(in: 0...good.variance)
+    }
 }
 
+private func calculateQuantity(good: TradeGood, techLevelVal: Int) -> Int {
+    guard techLevelVal >= good.mtlp else { return 0 }
+    guard techLevelVal != good.ttp else { return 15 }
+    return Int.random(in: 0...15)
+}
+
+
+
+
+// Protocol and classes for the various different types of trade goods
 protocol TradeGood {
     var name: String { get }
-    var mtlp: Int { get } // parsecs per gallon
-    var mtlu: Int { get }
-    var ttp: Int { get }
+    var mtlp: Int { get }   // minimum tech level to produce
+    var mtlu: Int { get }   // minimum tech level to use
+    var ttp: Int { get }    // tech level that produces most of item
     var basePrice: Int { get }
-    var ipl: Int { get }
+    var ipl: Int { get }    // increase price per tech level
     var variance: Int { get }
 }
 
