@@ -15,6 +15,7 @@ class Ship {
     private var currentLocation: (Int, Int)
     private var cargo: [MarketItem]
     private var fuel: Double
+    private var blasters: Bool
 
     
     //      INITIALIZER     //
@@ -22,11 +23,8 @@ class Ship {
         type = Gnat()
         currentLocation = (0,0)
         fuel = type.fuelCapacity
-        cargo = [
-            MarketItem(good: Water(), techLevelVal: 3),
-            MarketItem(good: Ore(), techLevelVal: 4),
-            MarketItem(good: Robots(), techLevelVal: 7)
-        ]
+        cargo = []
+        blasters = false
     }
     
     
@@ -38,10 +36,12 @@ class Ship {
     public func getMileage() -> Int { return type.mileage }
     public func getCargo() -> [MarketItem] { return cargo }
     public func getCargoCapacity() -> Int { return type.cargoCapacity }
+    public func getBlasters() -> Bool { return blasters }
     
     
     //      SETTERS     //
     public func setCurrentLocation(newLocation: (Int, Int)) { currentLocation = newLocation }
+    public func setBlasters(addBlasters: Bool) { blasters = addBlasters }
     
     
     //      TRAVEL FUNCTIONS      //

@@ -326,7 +326,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3qy-9p-dp4" userLabel="Planet Image">
-                                <rect key="frame" x="38.5" y="226" width="337" height="304"/>
+                                <rect key="frame" x="38.5" y="199" width="337" height="304"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="Mmm-ds-cEY"/>
@@ -344,7 +344,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-v0-Wd3" userLabel="Map Button">
-                                <rect key="frame" x="174.5" y="737" width="65" height="65"/>
+                                <rect key="frame" x="174.5" y="657" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="IYf-M0-PY0"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="sKG-2f-Jd4"/>
@@ -368,7 +368,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-UM-Kcq" userLabel="Cargo Button">
-                                <rect key="frame" x="59.5" y="767" width="65" height="65"/>
+                                <rect key="frame" x="59.5" y="687" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="M0C-9w-J2B"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="mrP-iI-i89"/>
@@ -388,8 +388,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="11r-cT-AcS" userLabel="Ship Info Button">
-                                <rect key="frame" x="289.5" y="767" width="65" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="11r-cT-AcS" userLabel="Land Button">
+                                <rect key="frame" x="289.5" y="687" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="5H6-Pw-x0b"/>
                                     <constraint firstAttribute="height" constant="65" id="gJG-TU-slM"/>
@@ -415,12 +415,12 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tech_HUD_simplified" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-H2-SNi">
-                                <rect key="frame" x="0.0" y="134" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="450"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="PPe-Yt-2Yk"/>
+                                    <constraint firstAttribute="height" constant="450" id="PPe-Yt-2Yk"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9E-tl-Gmd" userLabel="Username Label">
@@ -442,9 +442,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ba-to-zoB" userLabel="Planet Name Label">
-                                <rect key="frame" x="168" y="178" width="78" height="40"/>
+                                <rect key="frame" x="168" y="144.5" width="78" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNN-fc-CjO" userLabel="Fuel Label">
+                                <rect key="frame" x="40" y="783" width="27.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Type: GNAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPw-eS-TYu" userLabel="Ship Type Label">
+                                <rect key="frame" x="40" y="813" width="110" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Eid-jh-Jhb">
+                                <rect key="frame" x="76" y="791" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="ByL-jv-wzm"/>
+                                    <constraint firstAttribute="width" constant="300" id="q7T-uQ-LKl"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has Weapons: NO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZk-oq-jLN" userLabel="Weapons Label">
+                                <rect key="frame" x="258" y="812" width="118" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -454,37 +480,49 @@
                             <constraint firstItem="11r-cT-AcS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hSn-v0-Wd3" secondAttribute="trailing" constant="8" symbolic="YES" id="1dJ-Yj-IBB"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" id="5dG-SN-BGt"/>
                             <constraint firstAttribute="trailing" secondItem="O5A-nX-rGz" secondAttribute="trailing" id="5ev-mL-zE5"/>
-                            <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="182" id="7Qh-3W-Vxp"/>
-                            <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="8ba-to-zoB" secondAttribute="bottom" constant="8" id="8xz-Ce-Iiw"/>
+                            <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="155" id="7Qh-3W-Vxp"/>
+                            <constraint firstItem="3qy-9p-dp4" firstAttribute="top" secondItem="8ba-to-zoB" secondAttribute="bottom" constant="15" id="8xz-Ce-Iiw"/>
+                            <constraint firstItem="SPw-eS-TYu" firstAttribute="top" secondItem="jNN-fc-CjO" secondAttribute="bottom" constant="13" id="9jD-fa-4am"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="jNN-fc-CjO" secondAttribute="bottom" constant="62" id="Aef-RC-j4p"/>
                             <constraint firstItem="yS7-iv-dBl" firstAttribute="leading" secondItem="I9E-tl-Gmd" secondAttribute="trailing" constant="207.5" id="Bpv-gf-c9z"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="trailing" secondItem="yS7-iv-dBl" secondAttribute="trailing" constant="40" id="ERU-NG-uEo"/>
                             <constraint firstItem="hSn-v0-Wd3" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="Ftd-3S-yEK"/>
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="leading" secondItem="qYh-vV-crt" secondAttribute="leading" id="Hcz-ab-h7L"/>
+                            <constraint firstItem="jNN-fc-CjO" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="40" id="Hof-dA-g9u"/>
+                            <constraint firstItem="SPw-eS-TYu" firstAttribute="leading" secondItem="ZzH-bw-Kfj" secondAttribute="leading" constant="40" id="JTp-t4-Hco"/>
                             <constraint firstItem="yS7-iv-dBl" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="10" id="LNA-Js-Zrq"/>
                             <constraint firstAttribute="bottom" secondItem="O5A-nX-rGz" secondAttribute="bottom" id="MGs-EC-UBw"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="trailing" secondItem="yZk-oq-jLN" secondAttribute="trailing" constant="38" id="Nu6-ik-lfQ"/>
                             <constraint firstItem="8Gm-hn-ntx" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="Q7V-HQ-plm"/>
-                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="hSn-v0-Wd3" secondAttribute="bottom" constant="60" id="WjI-Q3-VWc"/>
-                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="11r-cT-AcS" secondAttribute="bottom" constant="30" id="WpG-QC-6Sj"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="yZk-oq-jLN" secondAttribute="bottom" constant="33" id="UfR-wR-1ff"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="hSn-v0-Wd3" secondAttribute="bottom" constant="140" id="WjI-Q3-VWc"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="11r-cT-AcS" secondAttribute="bottom" constant="110" id="WpG-QC-6Sj"/>
                             <constraint firstItem="I9E-tl-Gmd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZzH-bw-Kfj" secondAttribute="leading" id="X95-j5-UcM"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="Eid-jh-Jhb" secondAttribute="bottom" constant="69" id="XiS-Wo-dH6"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="trailing" secondItem="ZzH-bw-Kfj" secondAttribute="trailing" id="bcJ-1Q-nzQ"/>
                             <constraint firstItem="3qy-9p-dp4" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="eaz-cO-HOl"/>
+                            <constraint firstItem="Eid-jh-Jhb" firstAttribute="leading" secondItem="jNN-fc-CjO" secondAttribute="trailing" constant="8.5" id="inj-v9-RhV"/>
                             <constraint firstItem="8Gm-hn-ntx" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="309" id="kgs-R5-BRi"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="SPw-eS-TYu" secondAttribute="bottom" constant="33" id="l67-LJ-BZ7"/>
                             <constraint firstItem="vjf-UM-Kcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZzH-bw-Kfj" secondAttribute="leading" symbolic="YES" id="neE-s8-plp"/>
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="top" secondItem="qYh-vV-crt" secondAttribute="top" id="ueY-pR-URv"/>
                             <constraint firstItem="8ba-to-zoB" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="vFm-jt-tWV"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="trailing" secondItem="11r-cT-AcS" secondAttribute="trailing" constant="59.5" id="y6n-vl-eIH"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="90" id="y6v-xU-poj"/>
                             <constraint firstItem="hSn-v0-Wd3" firstAttribute="leading" secondItem="vjf-UM-Kcq" secondAttribute="trailing" constant="50" id="yPr-G7-5uo"/>
-                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="vjf-UM-Kcq" secondAttribute="bottom" constant="30" id="ywW-kC-7xO"/>
+                            <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="vjf-UM-Kcq" secondAttribute="bottom" constant="110" id="ywW-kC-7xO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZzH-bw-Kfj"/>
                     </view>
                     <connections>
                         <outlet property="creditsLabel" destination="yS7-iv-dBl" id="Zos-9a-hFm"/>
                         <outlet property="encounterImg" destination="8Gm-hn-ntx" id="TmQ-Zj-2em"/>
+                        <outlet property="fuelProgressView" destination="Eid-jh-Jhb" id="ceJ-Ig-qV7"/>
                         <outlet property="planetImg" destination="3qy-9p-dp4" id="02h-hA-Dh4"/>
                         <outlet property="planetNameLabel" destination="8ba-to-zoB" id="aUr-83-yZU"/>
+                        <outlet property="shipTypeLabel" destination="SPw-eS-TYu" id="vZg-jI-8qL"/>
                         <outlet property="usernameLabel" destination="I9E-tl-Gmd" id="pUl-6H-ae0"/>
+                        <outlet property="weaponTypeLabel" destination="yZk-oq-jLN" id="QgU-fs-bsz"/>
                         <segue destination="Il9-4c-mci" kind="show" identifier="maintosurface" id="1gA-1O-gBn"/>
                     </connections>
                 </viewController>

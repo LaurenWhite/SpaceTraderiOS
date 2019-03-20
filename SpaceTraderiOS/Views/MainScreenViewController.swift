@@ -18,8 +18,14 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var planetImg: UIImageView!
     @IBOutlet var encounterImg: UIImageView!
     
+    @IBOutlet var fuelProgressView: UIProgressView!
+    @IBOutlet var shipTypeLabel: UILabel!
+    @IBOutlet var weaponTypeLabel: UILabel!
+    
     var planetImgKey: String?
     var planetName: String?
+    
+    let ship = player.getSpaceship()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,10 @@ class MainScreenViewController: UIViewController {
         planetNameLabel.text = planetName?.uppercased()
         //encounterImg.image = UIImage(named: "police")
         encounterImg.isHidden = true
+        
+        fuelProgressView.progress = Float(ship.getFuel() / ship.getFuelCapacity())
+        shipTypeLabel.text = "Ship Type: " + ship.getType().name.uppercased()
+        weaponTypeLabel.text = "Attack Blasters: " + ship.getBlasters().description.uppercased()
     }
     
     
