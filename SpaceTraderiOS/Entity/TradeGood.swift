@@ -10,7 +10,8 @@ import Foundation
 
 
 // Struct for holding trade goods and relevant market information about those goods
-struct MarketItem {
+struct MarketItem: Equatable {
+
     var good: TradeGood
     var quantity: Int
     var price: Int
@@ -19,6 +20,16 @@ struct MarketItem {
         self.good = good
         quantity = calculateQuantity(good: good, techLevelVal: techLevelVal)
         price = good.basePrice + (good.ipl * (techLevelVal - good.mtlp)) + Int.random(in: 0...good.variance)
+    }
+    
+    init(good: TradeGood, quantity: Int, price: Int) {
+        self.good = good
+        self.quantity = quantity
+        self.price = price
+    }
+    
+    static func == (lhs: MarketItem, rhs: MarketItem) -> Bool {
+        return lhs.good.name == rhs.good.name
     }
 }
 
@@ -40,6 +51,7 @@ protocol TradeGood {
     var basePrice: Int { get }
     var ipl: Int { get }    // increase price per tech level
     var variance: Int { get }
+    var weight: Int { get }
 }
 
 class Water: TradeGood {
@@ -52,6 +64,7 @@ class Water: TradeGood {
     var basePrice = 30
     var ipl = 3
     var variance = 4
+    var weight = 2
 }
 
 class Furs: TradeGood {
@@ -62,6 +75,7 @@ class Furs: TradeGood {
     var basePrice = 250
     var ipl = 10
     var variance = 10
+    var weight = 4
 }
 
 class Food: TradeGood {
@@ -72,6 +86,7 @@ class Food: TradeGood {
     var basePrice = 100
     var ipl = 5
     var variance = 5
+    var weight = 2
 }
 
 class Ore: TradeGood {
@@ -82,6 +97,7 @@ class Ore: TradeGood {
     var basePrice = 350
     var ipl = 20
     var variance = 10
+    var weight = 8
 }
 
 class Games: TradeGood {
@@ -92,6 +108,7 @@ class Games: TradeGood {
     var basePrice = 250
     var ipl = -10
     var variance = 5
+    var weight = 1
 }
 
 class Firearms: TradeGood {
@@ -102,6 +119,7 @@ class Firearms: TradeGood {
     var basePrice = 1250
     var ipl = -75
     var variance = 100
+    var weight = 6
 }
 
 class Medicine: TradeGood {
@@ -112,6 +130,7 @@ class Medicine: TradeGood {
     var basePrice = 650
     var ipl = -20
     var variance = 10
+    var weight = 1
 }
 
 class Machines: TradeGood {
@@ -122,6 +141,7 @@ class Machines: TradeGood {
     var basePrice = 900
     var ipl = -30
     var variance = 5
+    var weight = 9
 }
 
 class Narcotics: TradeGood {
@@ -132,6 +152,7 @@ class Narcotics: TradeGood {
     var basePrice = 3500
     var ipl = -125
     var variance = 150
+    var weight = 1
 }
 
 class Robots: TradeGood {
@@ -142,4 +163,5 @@ class Robots: TradeGood {
     var basePrice = 5000
     var ipl = -150
     var variance = 100
+    var weight = 10
 }

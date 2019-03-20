@@ -53,6 +53,26 @@ class Planet {
     public func getTraderEC() -> Int { return traderEncounterChance }
     public func getPoliceEC() -> Int { return policeEncoutnerChance }
     public func getMercenaryEC() -> Int { return mercenaryEncoutnerChance }
+    
+    // MARKET FUNCTIONALITY
+    public func sellToPlayer(item: MarketItem) {
+        guard market.contains(item) else { return }
+        let index = market.firstIndex(of: item)!
+        market[index].quantity -= item.quantity
+    }
+    
+    public func buyFromPlayer(item: MarketItem) {
+        if market.contains(item) {
+            let index = market.firstIndex(of: item)!
+            market[index].quantity += item.quantity
+        } else {
+            market.append(item)
+        }
+    }
+    
+    public func canUseItem(item: MarketItem) -> Bool {
+        return techLevel.rawValue >= item.good.mtlu
+    }
 }
 
 private func chooseName(index: Int) -> String {

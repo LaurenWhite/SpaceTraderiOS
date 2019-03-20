@@ -50,4 +50,8 @@ class Player {
     public func setEngineerPoints(newPoints: Int) { engineerPoints = newPoints }
     public func setCredits(newCredits: Int) { credits = newCredits }
     public func setSpaceShip(newSpaceship: Ship) { spaceship = newSpaceship }
+    
+    public func hasSufficientFunds(cost: Int) -> Bool {
+        return credits >= cost
+    }
 }
