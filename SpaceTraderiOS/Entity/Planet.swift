@@ -29,7 +29,6 @@ class Planet {
     
     // INITIALIZER
     init() {
-       
         name = chooseName(index: Int.random(in: 0..<availableNames.count))
         location = generateLocation()
         print("Location " + String(counter) + " generated!")
@@ -54,6 +53,7 @@ class Planet {
     public func getPoliceEC() -> Int { return policeEncoutnerChance }
     public func getMercenaryEC() -> Int { return mercenaryEncoutnerChance }
     
+    
     // MARKET FUNCTIONALITY
     public func sellToPlayer(item: MarketItem) {
         guard market.contains(item) else { return }
@@ -75,6 +75,9 @@ class Planet {
     }
 }
 
+
+
+// HELPER FUNCTIONS
 private func chooseName(index: Int) -> String {
     let name = availableNames[index]
     availableNames.remove(at: index)
@@ -82,6 +85,7 @@ private func chooseName(index: Int) -> String {
 }
 
 private func generateLocation() -> (Int, Int) {
+    
     var randomLocation = (Int.random(in: 50...360), Int.random(in: 50...760))
     
     while(hasOverlap(testLocation: randomLocation)) {
@@ -93,10 +97,10 @@ private func generateLocation() -> (Int, Int) {
 
 private func hasOverlap(testLocation: (Int, Int)) -> Bool {
     for coordinate in existingCoordinates {
-        if(abs(testLocation.0 - coordinate.0) < 25) {
+        if(abs(testLocation.0 - coordinate.0) < 15) {
             return true
         }
-        if(abs(testLocation.1 - coordinate.1) < 25) {
+        if(abs(testLocation.1 - coordinate.1) < 15) {
             return true
         }
     }

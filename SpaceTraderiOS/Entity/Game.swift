@@ -12,24 +12,27 @@ var game: Game = loadGame() ?? Game()
 
 class Game {
     
+    // ATTRIBUTES
     private let planets: [Planet]
     private var difficulty: String
-    //private var instance: Game
     
+    
+    // INTIALIZER
     init() {
-        planets = generatePlanets()
-        print("Planets Generated!")
         difficulty = "Beginner"
-        //instance = self
+        planets = generatePlanets()
         printPlanets(planets: planets)
-        print("Planets Printed!")
     }
     
+    
+    // GETTERS
     public func getPlanets() -> [Planet] { return planets }
     public func getDifficulty() -> String { return difficulty }
-    //public func getGameInstance() -> Game { return instance }
 }
 
+
+
+// HELPER FUNCTIONS
 private func generatePlanets() -> [Planet] {
     var newPlanets: [Planet] = []
     for _ in 1...10 {
