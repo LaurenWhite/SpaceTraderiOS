@@ -11,15 +11,28 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
-    // UI OUTLETS
+    //      UI OUTLETS       //
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var creditsLabel: UILabel!
     @IBOutlet var planetNameLabel: UILabel!
     @IBOutlet var planetImg: UIImageView!
     @IBOutlet var encounterImg: UIImageView!
     
+    @IBOutlet var fuelProgressView: UIProgressView!
+    @IBOutlet var shipTypeLabel: UILabel!
+    @IBOutlet var weaponTypeLabel: UILabel!
+    
+    
+    //      VARIABLES       //
+    
+    // Planet information to be passed to other views
     var planetImgKey: String?
     var planetName: String?
+    
+    // Current ship for player
+    let ship = player.getSpaceship()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +43,13 @@ class MainScreenViewController: UIViewController {
         planetNameLabel.text = planetName?.uppercased()
         //encounterImg.image = UIImage(named: "police")
         encounterImg.isHidden = true
+        
+        fuelProgressView.progress = Float(ship.getFuel() / ship.getFuelCapacity())
+        shipTypeLabel.text = "Ship Type: " + ship.getType().name.uppercased()
+        weaponTypeLabel.text = "Attack Blasters: " + ship.getBlasters().description.uppercased()
     }
     
-    
+    // If ship has traveled to a planet, go to the surface
     @IBAction func landShipSelected(_ sender: Any) {
         guard planetImg.image != nil else { return }
         guard encounterImg.isHidden else { return }
@@ -40,6 +57,9 @@ class MainScreenViewController: UIViewController {
     }
     
     
+    
+    
+    //      SEGUE PREPERATION      //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MapViewController {
             destination.planetImgKey = planetImgKey
@@ -47,6 +67,11 @@ class MainScreenViewController: UIViewController {
         }
         if let destination = segue.destination as? PlanetSurfaceViewController {
             destination.planetImgKey = planetImgKey
+            destination.planetName = planetName
+        }
+        if let destination = segue.destination as? CargoScreenViewController {
+            destination.planetImgKey = planetImgKey
+            destination.planetName = planetName
         }
     }
     

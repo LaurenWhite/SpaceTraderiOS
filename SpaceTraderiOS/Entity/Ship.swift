@@ -13,8 +13,9 @@ class Ship {
     //      ATTRIBUTES      //
     private var type: ShipType
     private var currentLocation: (Int, Int)
-    private var cargo: [String]
+    private var cargo: [MarketItem]
     private var fuel: Double
+    private var blasters: Bool
 
     
     //      INITIALIZER     //
@@ -23,6 +24,7 @@ class Ship {
         currentLocation = (0,0)
         fuel = type.fuelCapacity
         cargo = []
+        blasters = false
     }
     
     
@@ -32,12 +34,18 @@ class Ship {
     public func getFuel() -> Double { return fuel }
     public func getFuelCapacity() -> Double { return type.fuelCapacity }
     public func getMileage() -> Int { return type.mileage }
-    public func getCargo() -> [String] { return cargo }
+    public func getCargo() -> [MarketItem] { return cargo }
     public func getCargoCapacity() -> Int { return type.cargoCapacity }
+    public func getBlasters() -> Bool { return blasters }
+    public func getCurrentWeight() -> Int { return currentWeight }
+    public func getAvailableWeight() -> Int { return type.cargoCapacity - currentWeight }
     
     
     //      SETTERS     //
+    public func setType(newType: ShipType) { type = newType; fuel = newType.fuelCapacity }
     public func setCurrentLocation(newLocation: (Int, Int)) { currentLocation = newLocation }
+    public func setBlasters(addBlasters: Bool) { blasters = addBlasters }
+    public func fillFuel() { fuel = getFuelCapacity() }
     
     
     //      TRAVEL FUNCTIONS      //
@@ -64,7 +72,47 @@ class Ship {
     
     
     //      CARGO FUNCTIONS     //
-    // ...
+    private var currentWeight: Int {
+        var sum = 0
+        for item in cargo {
+            sum += item.good.weight
+        }
+        return sum
+    }
+    
+    public func hasSufficientSpace(newWeight: Int) -> Bool {
+        return currentWeight + newWeight <= type.cargoCapacity
+    }
+    
+    public func addToCargo(newItem: MarketItem) {
+        if cargo.contains(newItem) {
+            let index = cargo.firstIndex(of: newItem)!
+            cargo[index].quantity += newItem.quantity
+            cargo[index].price = newItem.price
+        } else {
+            cargo.append(newItem)
+        }
+    }
+    
+    public func removeFromCargo(item: MarketItem) {
+        guard cargo.contains(item) else { return }
+        let index = cargo.firstIndex(of: item)!
+        
+        if(item.quantity == cargo[index].quantity) {
+            cargo.remove(at: index)
+        } else {
+            cargo[index].quantity -= item.quantity
+        }
+    }
+    
+    public func updateRegionalPrices(planet: Planet) {
+        for item in planet.getMarket() {
+            if cargo.contains(item) {
+                let index = cargo.firstIndex(of: item)!
+                cargo[index].price = item.price
+            }
+        }
+    }
 }
 
 extension Double {
