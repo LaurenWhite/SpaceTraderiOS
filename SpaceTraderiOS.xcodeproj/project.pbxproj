@@ -24,6 +24,8 @@
 		4E3FCCF122279A16009A63A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF022279A16009A63A2 /* Game.swift */; };
 		4E3FCCF32227BB1C009A63A2 /* UIView+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */; };
 		4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */; };
+		4EB43BE22241C5D300F0BE6E /* TradeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB43BE12241C5D300F0BE6E /* TradeItemCell.swift */; };
+		4EB43BE42241C61900F0BE6E /* CargoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB43BE32241C61900F0BE6E /* CargoScreenViewController.swift */; };
 		4EC9A463223B58E800EBA1A6 /* TradeGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9A462223B58E800EBA1A6 /* TradeGood.swift */; };
 		4EED51742234CDBF0075B662 /* PlanetSurfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED51732234CDBF0075B662 /* PlanetSurfaceViewController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		4E3FCCF022279A16009A63A2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Attributes.swift"; sourceTree = "<group>"; };
 		4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipType.swift; sourceTree = "<group>"; };
+		4EB43BE12241C5D300F0BE6E /* TradeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeItemCell.swift; sourceTree = "<group>"; };
+		4EB43BE32241C61900F0BE6E /* CargoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoScreenViewController.swift; sourceTree = "<group>"; };
 		4EC9A462223B58E800EBA1A6 /* TradeGood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeGood.swift; sourceTree = "<group>"; };
 		4EED51732234CDBF0075B662 /* PlanetSurfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSurfaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +115,7 @@
 				4E23012A2220BAD3008FDA8F /* LaunchScreen.storyboard */,
 				4E23012D2220BAD3008FDA8F /* Info.plist */,
 				4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */,
+				4EB43BE12241C5D300F0BE6E /* TradeItemCell.swift */,
 			);
 			path = SpaceTraderiOS;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				4E3FCCE622278ECE009A63A2 /* MainScreenViewController.swift */,
 				4E3FCCE822278F0D009A63A2 /* MapViewController.swift */,
 				4EED51732234CDBF0075B662 /* PlanetSurfaceViewController.swift */,
+				4EB43BE32241C61900F0BE6E /* CargoScreenViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,11 +266,13 @@
 				4E3FCCE722278ECE009A63A2 /* MainScreenViewController.swift in Sources */,
 				4E3FCCE922278F0D009A63A2 /* MapViewController.swift in Sources */,
 				4E2301462220C650008FDA8F /* Player.swift in Sources */,
+				4EB43BE42241C61900F0BE6E /* CargoScreenViewController.swift in Sources */,
 				4E2301242220BAD1008FDA8F /* StartScreenViewController.swift in Sources */,
 				4E3FCCEB222790C4009A63A2 /* Planet.swift in Sources */,
 				4E2301222220BAD1008FDA8F /* AppDelegate.swift in Sources */,
 				4E3FCCED22279529009A63A2 /* TechLevel.swift in Sources */,
 				4E2301442220C046008FDA8F /* UserConfigurationViewController.swift in Sources */,
+				4EB43BE22241C5D300F0BE6E /* TradeItemCell.swift in Sources */,
 				4EED51742234CDBF0075B662 /* PlanetSurfaceViewController.swift in Sources */,
 				4E3FCCF32227BB1C009A63A2 /* UIView+Attributes.swift in Sources */,
 			);

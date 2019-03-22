@@ -52,9 +52,16 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     // Menus and Pop ups
     @IBOutlet var welcomeMenuView: DesignableView!
     @IBOutlet var menuMessageTextView: UITextView!
+    @IBOutlet var shipMaintenanceMenuView: DesignableView!
+    @IBOutlet var blastersLabel: UILabel!
+    @IBOutlet var upgradeShipLabel: UILabel!
+    
     
     // Trade menu outlets
     @IBOutlet var tradeMenuView: DesignableView!
+    @IBOutlet var playerCreditsLabel: UILabel!
+    @IBOutlet var cargoSpaceLabel: UILabel!
+    
     @IBOutlet var buySellButton: UIButton!
     @IBOutlet var tradeTableView: UITableView!
     
@@ -79,6 +86,10 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         tradeMenuView.isHidden = true
         buyMenuShowing = true
         buySellButton.setTitle("Buy", for: .normal)
+        shipMaintenanceMenuView.isHidden = true
+        
+        playerCreditsLabel.text = "Credits: $\(player.getCredits())"
+        cargoSpaceLabel.text = "Cargo Space: \(player.getSpaceship().getAvailableWeight()) lbs"
         
         tradeTableView.delegate = self
         tradeTableView.dataSource = self
@@ -96,30 +107,47 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func tradeGoodsSelected(_ sender: Any) {
-        tradeMenuView.isHidden = false
+        if !shipMaintenanceMenuView.isHidden { shipMaintenanceMenuView.isHidden = true }
+        if (tradeMenuView.isHidden) {
+            tradeMenuView.isHidden = false
+        } else {
+            tradeMenuView.isHidden = true
+        }
     }
     
     
     @IBAction func refuelShipSelected(_ sender: Any) {
+        if !tradeMenuView.isHidden { tradeMenuView.isHidden = true }
+        if (shipMaintenanceMenuView.isHidden) {
+            shipMaintenanceMenuView.isHidden = false
+        } else {
+            shipMaintenanceMenuView.isHidden = true
+        }
     }
     
     @IBAction func planetGoodsSelected(_ sender: Any) {
         buyMenuShowing = true
         buySellButton.setTitle("Buy", for: .normal)
-        goodNameLabel.text = "None"
-        selectedItem = nil
-        quantityStepper.value = 0
-        quantityChanged(self)
-        tradeTableView.reloadData()
+        resetLabels()
     }
     
     @IBAction func myGoodsSelected(_ sender: Any) {
         buyMenuShowing = false
         buySellButton.setTitle("Sell", for: .normal)
+        resetLabels()
+        
+    }
+    
+    private func resetLabels() {
         goodNameLabel.text = "None"
         selectedItem = nil
         quantityStepper.value = 0
-        quantityChanged(self)
+        quantityLabel.text = "Quantity:  0"
+        goodNameLabel.text = "None"
+        goodPriceLabel.text = "$0"
+        goodWeightLabel.text = "0 lbs"
+        playerCreditsLabel.text = "Credits: $\(player.getCredits())"
+        cargoSpaceLabel.text = "Cargo Space: \(player.getSpaceship().getAvailableWeight()) lbs"
         tradeTableView.reloadData()
     }
     
@@ -258,9 +286,32 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         }
         print("Player Credits (after): \(player.getCredits())")
         print()
-        quantityStepper.value = 0
-        quantityChanged(self)
-        tradeTableView.reloadData()
+        resetLabels()
+    }
+    
+    
+    @IBAction func buyFuelButtonPressed(_ sender: Any) {
+        guard player.hasSufficientFunds(cost: 50) else { return }
+        player.getSpaceship().fillFuel()
+        player.setCredits(newCredits: player.getCredits() - 50)
+    }
+    
+    @IBAction func buyBlastersButtonPressed(_ sender: Any) {
+        guard player.hasSufficientFunds(cost: 300) else { return }
+        guard !player.getSpaceship().getBlasters() else { return }
+        player.getSpaceship().setBlasters(addBlasters: true)
+        player.setCredits(newCredits: player.getCredits() - 300)
+    }
+    
+    
+    @IBAction func buyShipButtonPressed(_ sender: Any) {
+        guard player.hasSufficientFunds(cost: 2000) else { return }
+        if player.getSpaceship().getType() is Gnat {
+            player.getSpaceship().setType(newType: Beetle())
+        } else if player.getSpaceship().getType() is Beetle {
+            player.getSpaceship().setType(newType: Wasp())
+        }
+        player.setCredits(newCredits: player.getCredits() - 2000)
     }
     
     
@@ -271,45 +322,6 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
             destination.planetImgKey = planetImgKey
             destination.planetName = planetName
         }
-    }
-    
-}
-
-
-
-class TradeItemCell: UITableViewCell {
-    
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
-    @IBOutlet var quantityLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    func decorate(name: String, price: Int, quantity: Int) {
-        nameLabel.text = name
-        priceLabel.text = "$\(price)"
-        quantityLabel.text = String(quantity)
-    }
-    
-    func normalStyle() {
-        nameLabel.textColor = UIColor(red: 118/255, green: 214/255, blue: 255/255, alpha: 1)
-        priceLabel.textColor = UIColor(red: 118/255, green: 214/255, blue: 255/255, alpha: 1)
-        quantityLabel.textColor = UIColor(red: 118/255, green: 214/255, blue: 255/255, alpha: 1)
-    }
-    
-    func disabledStyle() {
-        nameLabel.textColor = UIColor.darkGray
-        priceLabel.textColor = UIColor.darkGray
-        quantityLabel.textColor = UIColor.darkGray
     }
     
 }

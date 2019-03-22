@@ -59,6 +59,10 @@ class MainScreenViewController: UIViewController {
             destination.planetImgKey = planetImgKey
             destination.planetName = planetName
         }
+        if let destination = segue.destination as? CargoScreenViewController {
+            destination.planetImgKey = planetImgKey
+            destination.planetName = planetName
+        }
     }
     
 }

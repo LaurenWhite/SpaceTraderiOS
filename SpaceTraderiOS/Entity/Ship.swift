@@ -37,11 +37,15 @@ class Ship {
     public func getCargo() -> [MarketItem] { return cargo }
     public func getCargoCapacity() -> Int { return type.cargoCapacity }
     public func getBlasters() -> Bool { return blasters }
+    public func getCurrentWeight() -> Int { return currentWeight }
+    public func getAvailableWeight() -> Int { return type.cargoCapacity - currentWeight }
     
     
     //      SETTERS     //
+    public func setType(newType: ShipType) { type = newType; fuel = newType.fuelCapacity }
     public func setCurrentLocation(newLocation: (Int, Int)) { currentLocation = newLocation }
     public func setBlasters(addBlasters: Bool) { blasters = addBlasters }
+    public func fillFuel() { fuel = getFuelCapacity() }
     
     
     //      TRAVEL FUNCTIONS      //
