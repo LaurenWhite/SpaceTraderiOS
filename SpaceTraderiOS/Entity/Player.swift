@@ -10,6 +10,7 @@ import Foundation
 
 class Player {
     
+    // ATTRIBUTES
     private var name: String
     
     private var availableSkillPoints: Int
@@ -22,6 +23,8 @@ class Player {
     
     private var spaceship: Ship
     
+    
+    // INTIALIZER
     init() {
         name = "Name"
         availableSkillPoints = 16
@@ -33,6 +36,8 @@ class Player {
         spaceship = Ship()
     }
     
+    
+    // GETTERS
     public func getName() -> String { return name }
     public func getAvailableSkillPoints() -> Int { return availableSkillPoints }
     public func getPilotPoints() -> Int { return pilotPoints }
@@ -42,6 +47,8 @@ class Player {
     public func getCredits() -> Int { return credits }
     public func getSpaceship() -> Ship { return spaceship }
     
+    
+    // SETTERS
     public func setName(newName: String) { name = newName }
     public func setAvailableSkillPoints(newPoints: Int) { availableSkillPoints = newPoints }
     public func setPilotPoints(newPoints: Int) { pilotPoints = newPoints }
@@ -51,6 +58,8 @@ class Player {
     public func setCredits(newCredits: Int) { credits = newCredits }
     public func setSpaceShip(newSpaceship: Ship) { spaceship = newSpaceship }
     
+    
+    // MARKET FUNCTIONALITY
     public func hasSufficientFunds(cost: Int) -> Bool {
         return credits >= cost
     }

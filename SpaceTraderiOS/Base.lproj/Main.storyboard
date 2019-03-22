@@ -619,7 +619,6 @@ Resource: [resource]</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="confrimTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="AXh-a6-OSR"/>
                                             <action selector="tradeGoodsSelected:" destination="Il9-4c-mci" eventType="touchUpInside" id="mGL-1a-siu"/>
                                         </connections>
                                     </button>
@@ -645,8 +644,7 @@ Resource: [resource]</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="cancelTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="pRg-RA-Y2Q"/>
-                                            <action selector="refuelShipSelected:" destination="Il9-4c-mci" eventType="touchUpInside" id="PUD-03-1fr"/>
+                                            <action selector="shipMaintenanceSelected:" destination="Il9-4c-mci" eventType="touchUpInside" id="kad-qg-l10"/>
                                         </connections>
                                     </button>
                                 </subviews>

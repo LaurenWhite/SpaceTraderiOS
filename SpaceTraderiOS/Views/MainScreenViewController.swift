@@ -11,7 +11,7 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
-    // UI OUTLETS
+    //      UI OUTLETS       //
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var creditsLabel: UILabel!
     @IBOutlet var planetNameLabel: UILabel!
@@ -22,10 +22,17 @@ class MainScreenViewController: UIViewController {
     @IBOutlet var shipTypeLabel: UILabel!
     @IBOutlet var weaponTypeLabel: UILabel!
     
+    
+    //      VARIABLES       //
+    
+    // Planet information to be passed to other views
     var planetImgKey: String?
     var planetName: String?
     
+    // Current ship for player
     let ship = player.getSpaceship()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +49,7 @@ class MainScreenViewController: UIViewController {
         weaponTypeLabel.text = "Attack Blasters: " + ship.getBlasters().description.uppercased()
     }
     
-    
+    // If ship has traveled to a planet, go to the surface
     @IBAction func landShipSelected(_ sender: Any) {
         guard planetImg.image != nil else { return }
         guard encounterImg.isHidden else { return }
@@ -50,6 +57,9 @@ class MainScreenViewController: UIViewController {
     }
     
     
+    
+    
+    //      SEGUE PREPERATION      //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MapViewController {
             destination.planetImgKey = planetImgKey

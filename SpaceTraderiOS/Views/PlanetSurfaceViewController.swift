@@ -16,7 +16,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     
     let planets = game.getPlanets()
     
-    // Planet information
+    // Planet information to be passed to other views
     var planet: Planet?
     var planetImgKey: String?
     var planetName: String?
@@ -49,15 +49,17 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     // Title labels
     @IBOutlet var planetNameLabel: UILabel!
     
-    // Menus and Pop ups
+    // Welcome menu and features
     @IBOutlet var welcomeMenuView: DesignableView!
     @IBOutlet var menuMessageTextView: UITextView!
+    
+    // Ship menu and features
     @IBOutlet var shipMaintenanceMenuView: DesignableView!
     @IBOutlet var blastersLabel: UILabel!
     @IBOutlet var upgradeShipLabel: UILabel!
     
     
-    // Trade menu outlets
+    // Trade menu and features
     @IBOutlet var tradeMenuView: DesignableView!
     @IBOutlet var playerCreditsLabel: UILabel!
     @IBOutlet var cargoSpaceLabel: UILabel!
@@ -71,6 +73,10 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet var quantityLabel: UILabel!
     @IBOutlet var quantityStepper: UIStepper!
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +112,13 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         self.performSegue(withIdentifier: "surfacetomain", sender: nil)
     }
     
+    private func extractIndexFromKey(key: String?) -> Int {
+        guard let key = key else { return 1 }
+        return Int(key.suffix(2)) ?? 1
+    }
+    
+    //      WELCOME MENU FUNCTIONS       //
+    
     @IBAction func tradeGoodsSelected(_ sender: Any) {
         if !shipMaintenanceMenuView.isHidden { shipMaintenanceMenuView.isHidden = true }
         if (tradeMenuView.isHidden) {
@@ -115,8 +128,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    
-    @IBAction func refuelShipSelected(_ sender: Any) {
+    @IBAction func shipMaintenanceSelected(_ sender: Any) {
         if !tradeMenuView.isHidden { tradeMenuView.isHidden = true }
         if (shipMaintenanceMenuView.isHidden) {
             shipMaintenanceMenuView.isHidden = false
@@ -125,12 +137,30 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    // Helper function for setting custom planet welcome message
+    private func setMenuMessage() {
+        guard let planet = planet else { return }
+        
+        let techLevelString = enumToString(tl: planet.getTechLevel())
+        let resourceString = enumToString(resource: planet.getResource())
+        
+        menuMessageTextView.text = "Welcome to \(planet.getName())!" +
+            "\nTech Level: \(techLevelString)" +
+        "\nResource: \(resourceString)"
+    }
+    
+    
+    
+    //      TRADE MENU FUNCTIONS       //
+    
+    // Display available planet goods for player to purchase
     @IBAction func planetGoodsSelected(_ sender: Any) {
         buyMenuShowing = true
         buySellButton.setTitle("Buy", for: .normal)
         resetLabels()
     }
     
+    // Display player goods available to sell
     @IBAction func myGoodsSelected(_ sender: Any) {
         buyMenuShowing = false
         buySellButton.setTitle("Sell", for: .normal)
@@ -138,6 +168,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    // Helper function for updating labels and information
     private func resetLabels() {
         goodNameLabel.text = "None"
         selectedItem = nil
@@ -151,28 +182,13 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         tradeTableView.reloadData()
     }
     
-    private func setMenuMessage() {
-        guard let planet = planet else { return }
-        
-        let techLevelString = enumToString(tl: planet.getTechLevel())
-        let resourceString = enumToString(resource: planet.getResource())
-        
-        menuMessageTextView.text = "Welcome to \(planet.getName())!" +
-                                    "\nTech Level: \(techLevelString)" +
-                                    "\nResource: \(resourceString)"
-    }
-    
+    // Helper function for updating regional prices in cargo
     private func updateCargoPrices() {
         guard let planet = planet else { return }
         player.getSpaceship().updateRegionalPrices(planet: planet)
     }
     
-    private func extractIndexFromKey(key: String?) -> Int {
-        guard let key = key else { return 1 }
-        return Int(key.suffix(2)) ?? 1
-    }
-    
-    
+    // Trade Table View: # of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let planet = planet else { return 9 }
         
@@ -183,6 +199,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    // Trade Table View: Load custom cell to display market item (name, price, quantity)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tradegooditem", for: indexPath) as! TradeItemCell
@@ -210,6 +227,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    // Trade Table View: Selecting an item to purchase or sell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         quantityStepper.value = 0
         quantityChanged(self)
@@ -229,6 +247,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         quantityStepper.maximumValue = Double(currentItem.quantity)
     }
     
+    // Trade Table View: Disable selection of advanced goods on simple planets
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         guard let  planet = planet else { return indexPath }
         
@@ -247,6 +266,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         return indexPath
     }
     
+    // Update labels and weight based on the increased/decreased quantity of selected item
     @IBAction func quantityChanged(_ sender: Any) {
         guard let selectedItem = selectedItem else { return }
         
@@ -259,7 +279,7 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         goodWeightLabel.text = "\(newWeight) lbs"
     }
     
-    
+    // Make the transaction if approved
     @IBAction func buySellButtonSelected(_ sender: Any) {
         guard let selectedItem = selectedItem else { return }
         guard let planet = planet else { return }
@@ -289,6 +309,8 @@ class PlanetSurfaceViewController: UIViewController, UITableViewDelegate, UITabl
         resetLabels()
     }
     
+    
+    //      SHIP MAINTENANCE MENU FUNCTIONS       //
     
     @IBAction func buyFuelButtonPressed(_ sender: Any) {
         guard player.hasSufficientFunds(cost: 50) else { return }

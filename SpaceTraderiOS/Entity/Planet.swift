@@ -22,6 +22,7 @@ class Planet {
     private var techLevel: TechLevel
     private var resource: Resource
     private var market: [MarketItem]
+    
     private var traderEncounterChance: Int
     private var policeEncoutnerChance: Int
     private var mercenaryEncoutnerChance: Int

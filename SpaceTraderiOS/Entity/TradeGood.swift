@@ -8,31 +8,37 @@
 
 import Foundation
 
+//         MARKET ITEM          //
 
 // Struct for holding trade goods and relevant market information about those goods
 struct MarketItem: Equatable {
 
+    // ATTRIBUTES
     var good: TradeGood
     var quantity: Int
     var price: Int
     
+    
+    // INITIALIZERS
+    // Used for initializing from Planet to generate market
     init(good: TradeGood, techLevelVal: Int) {
         self.good = good
         quantity = calculateQuantity(good: good, techLevelVal: techLevelVal)
         price = good.basePrice + (good.ipl * (techLevelVal - good.mtlp)) + Int.random(in: 0...good.variance)
     }
-    
+    // Used for intializing from Player to buy/sell and store in cargo
     init(good: TradeGood, quantity: Int, price: Int) {
         self.good = good
         self.quantity = quantity
         self.price = price
     }
-    
+    // Same type of item if name is the same
     static func == (lhs: MarketItem, rhs: MarketItem) -> Bool {
         return lhs.good.name == rhs.good.name
     }
 }
 
+// HELPER FUNCTIONS
 private func calculateQuantity(good: TradeGood, techLevelVal: Int) -> Int {
     guard techLevelVal >= good.mtlp else { return 0 }
     guard techLevelVal != good.ttp else { return 15 }
@@ -41,6 +47,7 @@ private func calculateQuantity(good: TradeGood, techLevelVal: Int) -> Int {
 
 
 
+//          TRADE GOODS         //
 
 // Protocol and classes for the various different types of trade goods
 protocol TradeGood {
