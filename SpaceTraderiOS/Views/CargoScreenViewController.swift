@@ -11,23 +11,31 @@ import UIKit
 
 class CargoScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //      VARIABLES       //
     var planetImgKey: String?
     var planetName: String?
     
     let cargo = player.getSpaceship().getCargo()
     
+    
+    
+    //      UI OUTLETS       //
     @IBOutlet var cargoTableView: UITableView!
+    
+    
     
     override func viewDidLoad() {
         cargoTableView.delegate = self
         cargoTableView.dataSource = self
     }
     
+    
     @IBAction func backButtonSelected(_ sender: Any) {
         self.performSegue(withIdentifier: "cargotomain", sender: nil)
     }
     
     
+    //      TABLE VIEW FUNCTIONS       //
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,6 +57,8 @@ class CargoScreenViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
+    
+    
     
     //      SEGUE PREPERATION      //
     

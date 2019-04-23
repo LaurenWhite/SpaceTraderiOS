@@ -57,6 +57,9 @@ class MainScreenViewController: UIViewController {
     }
     
     
+    @IBAction func saveButtonSelected(_ sender: Any) {
+        //database.saveGame()
+    }
     
     
     //      SEGUE PREPERATION      //

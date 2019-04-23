@@ -24,6 +24,7 @@
 		4E3FCCF122279A16009A63A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF022279A16009A63A2 /* Game.swift */; };
 		4E3FCCF32227BB1C009A63A2 /* UIView+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */; };
 		4E7FDCE8222E2AEC004E0CDA /* ShipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */; };
+		4E962E88226E78300021834C /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E962E87226E78300021834C /* GameDatabase.swift */; };
 		4EB43BE22241C5D300F0BE6E /* TradeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB43BE12241C5D300F0BE6E /* TradeItemCell.swift */; };
 		4EB43BE42241C61900F0BE6E /* CargoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB43BE32241C61900F0BE6E /* CargoScreenViewController.swift */; };
 		4EC9A463223B58E800EBA1A6 /* TradeGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9A462223B58E800EBA1A6 /* TradeGood.swift */; };
@@ -62,6 +63,7 @@
 		4E3FCCF022279A16009A63A2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4E3FCCF22227BB1C009A63A2 /* UIView+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Attributes.swift"; sourceTree = "<group>"; };
 		4E7FDCE7222E2AEC004E0CDA /* ShipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipType.swift; sourceTree = "<group>"; };
+		4E962E87226E78300021834C /* GameDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabase.swift; sourceTree = "<group>"; };
 		4EB43BE12241C5D300F0BE6E /* TradeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeItemCell.swift; sourceTree = "<group>"; };
 		4EB43BE32241C61900F0BE6E /* CargoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoScreenViewController.swift; sourceTree = "<group>"; };
 		4EC9A462223B58E800EBA1A6 /* TradeGood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeGood.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		4E2301202220BAD1008FDA8F /* SpaceTraderiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E962E86226E77F00021834C /* Database */,
 				4E2301422220BF62008FDA8F /* Entity */,
 				4E2301412220BD2E008FDA8F /* Views */,
 				4E2301212220BAD1008FDA8F /* AppDelegate.swift */,
@@ -155,6 +158,14 @@
 				4EC9A462223B58E800EBA1A6 /* TradeGood.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4E962E86226E77F00021834C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4E962E87226E78300021834C /* GameDatabase.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E962E88226E78300021834C /* GameDatabase.swift in Sources */,
 				4EC9A463223B58E800EBA1A6 /* TradeGood.swift in Sources */,
 				4E3FCCEF222796B7009A63A2 /* Resource.swift in Sources */,
 				4E33F1222227E789008CC851 /* Ship.swift in Sources */,
