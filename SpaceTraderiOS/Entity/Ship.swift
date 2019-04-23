@@ -16,6 +16,7 @@ class Ship {
     private var cargo: [MarketItem]
     private var fuel: Double
     private var blasters: Bool
+    private var hasStolenGoods: Bool
 
     
     //      INITIALIZER     //
@@ -25,6 +26,7 @@ class Ship {
         fuel = type.fuelCapacity
         cargo = []
         blasters = false
+        hasStolenGoods = false
     }
     
     
@@ -39,6 +41,7 @@ class Ship {
     public func getBlasters() -> Bool { return blasters }
     public func getCurrentWeight() -> Int { return currentWeight }
     public func getAvailableWeight() -> Int { return type.cargoCapacity - currentWeight }
+    public func getHasStolenGoods() -> Bool { return hasStolenGoods }
     
     
     //      SETTERS     //
@@ -46,6 +49,8 @@ class Ship {
     public func setCurrentLocation(newLocation: (Int, Int)) { currentLocation = newLocation }
     public func setBlasters(addBlasters: Bool) { blasters = addBlasters }
     public func fillFuel() { fuel = getFuelCapacity() }
+    public func setHasStolenGoods(stolen: Bool) { hasStolenGoods = stolen }
+    public func clearCargo() { cargo = [] }
     
     
     //      TRAVEL FUNCTIONS      //

@@ -46,7 +46,6 @@ private func calculateQuantity(good: TradeGood, techLevelVal: Int) -> Int {
 }
 
 
-
 //          TRADE GOODS         //
 
 // Protocol and classes for the various different types of trade goods

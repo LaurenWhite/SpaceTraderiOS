@@ -417,15 +417,6 @@
                                     <action selector="landShipSelected:" destination="qmi-Am-Wbn" eventType="touchUpInside" id="wO0-Pi-eum"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tech_HUD_simplified" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-H2-SNi">
-                                <rect key="frame" x="0.0" y="134" width="414" height="450.00000000000023"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="PPe-Yt-2Yk"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9E-tl-Gmd" userLabel="Username Label">
                                 <rect key="frame" x="40" y="54" width="61.5" height="27.5"/>
                                 <constraints>
@@ -503,6 +494,107 @@
                                     <action selector="saveButtonSelected:" destination="qmi-Am-Wbn" eventType="touchUpInside" id="T6h-yH-Lb0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tech_HUD_simplified" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-H2-SNi">
+                                <rect key="frame" x="0.0" y="134" width="414" height="450"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="PPe-Yt-2Yk"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQt-dD-AGh" userLabel="Encounter View Pop Up" customClass="DesignableView" customModule="SpaceTraderiOS" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="358" width="295" height="179"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="You have encountered a [name]. What would you like to do?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnM-eg-f4C" userLabel="Confirmation Text View">
+                                        <rect key="frame" x="22" y="8" width="251" height="80.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AndaleMono" family="Andale Mono" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-Y1-fjL">
+                                        <rect key="frame" x="30" y="119" width="60" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="c7v-T0-8Rz"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="fuq-lH-wVq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Talk">
+                                            <color key="titleColor" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confrimTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="fOS-S2-g2b"/>
+                                            <action selector="peaceButtonSelected:" destination="qmi-Am-Wbn" eventType="touchUpInside" id="Y7d-wL-lWR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-bj-BpB">
+                                        <rect key="frame" x="195" y="119" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Cl5-fD-2qO"/>
+                                            <constraint firstAttribute="height" constant="35" id="UnE-hw-CbJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Combat">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelTravelSelected:" destination="Y7n-ab-JJi" eventType="touchUpInside" id="3Co-p6-VnO"/>
+                                            <action selector="combatButtonSelected:" destination="qmi-Am-Wbn" eventType="touchUpInside" id="dmT-p1-Ozq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mnM-eg-f4C" firstAttribute="top" secondItem="SQt-dD-AGh" secondAttribute="top" constant="8" id="1Ry-UQ-Ril"/>
+                                    <constraint firstAttribute="trailing" secondItem="mnM-eg-f4C" secondAttribute="trailing" constant="22" id="9ds-Nr-FKG"/>
+                                    <constraint firstAttribute="width" constant="295" id="F0k-OK-slX"/>
+                                    <constraint firstAttribute="trailing" secondItem="DqI-bj-BpB" secondAttribute="trailing" constant="30" id="HnD-Gw-wQ2"/>
+                                    <constraint firstItem="OLC-Y1-fjL" firstAttribute="leading" secondItem="SQt-dD-AGh" secondAttribute="leading" constant="30" id="Jba-zS-8qC"/>
+                                    <constraint firstAttribute="height" constant="179" id="e7C-Gc-ri2"/>
+                                    <constraint firstAttribute="bottom" secondItem="DqI-bj-BpB" secondAttribute="bottom" constant="25" id="jUY-oG-LvB"/>
+                                    <constraint firstAttribute="bottom" secondItem="OLC-Y1-fjL" secondAttribute="bottom" constant="25" id="lHO-Q3-bC9"/>
+                                    <constraint firstItem="mnM-eg-f4C" firstAttribute="leading" secondItem="SQt-dD-AGh" secondAttribute="leading" constant="22" id="q3h-Yz-cBj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.38545760759999997" green="0.70036319700000005" blue="0.84003025529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -531,12 +623,14 @@
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="11r-cT-AcS" secondAttribute="bottom" constant="110" id="WpG-QC-6Sj"/>
                             <constraint firstItem="I9E-tl-Gmd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZzH-bw-Kfj" secondAttribute="leading" id="X95-j5-UcM"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="Eid-jh-Jhb" secondAttribute="bottom" constant="69" id="XiS-Wo-dH6"/>
+                            <constraint firstItem="hSn-v0-Wd3" firstAttribute="top" secondItem="SQt-dD-AGh" secondAttribute="bottom" constant="120" id="ZeA-Uj-oM7"/>
                             <constraint firstItem="4y4-H2-SNi" firstAttribute="trailing" secondItem="ZzH-bw-Kfj" secondAttribute="trailing" id="bcJ-1Q-nzQ"/>
                             <constraint firstItem="3qy-9p-dp4" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="eaz-cO-HOl"/>
                             <constraint firstItem="Eid-jh-Jhb" firstAttribute="leading" secondItem="jNN-fc-CjO" secondAttribute="trailing" constant="8.5" id="inj-v9-RhV"/>
                             <constraint firstItem="8Gm-hn-ntx" firstAttribute="top" secondItem="ZzH-bw-Kfj" secondAttribute="top" constant="309" id="kgs-R5-BRi"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="bottom" secondItem="SPw-eS-TYu" secondAttribute="bottom" constant="33" id="l67-LJ-BZ7"/>
                             <constraint firstItem="vjf-UM-Kcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZzH-bw-Kfj" secondAttribute="leading" symbolic="YES" id="neE-s8-plp"/>
+                            <constraint firstItem="SQt-dD-AGh" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="oYY-yX-SSl"/>
                             <constraint firstItem="O5A-nX-rGz" firstAttribute="top" secondItem="qYh-vV-crt" secondAttribute="top" id="ueY-pR-URv"/>
                             <constraint firstItem="8ba-to-zoB" firstAttribute="centerX" secondItem="qYh-vV-crt" secondAttribute="centerX" id="vFm-jt-tWV"/>
                             <constraint firstItem="ZzH-bw-Kfj" firstAttribute="trailing" secondItem="11r-cT-AcS" secondAttribute="trailing" constant="59.5" id="y6n-vl-eIH"/>
@@ -547,9 +641,13 @@
                         <viewLayoutGuide key="safeArea" id="ZzH-bw-Kfj"/>
                     </view>
                     <connections>
+                        <outlet property="combatOptionButton" destination="DqI-bj-BpB" id="Oh9-pi-zli"/>
                         <outlet property="creditsLabel" destination="yS7-iv-dBl" id="Zos-9a-hFm"/>
                         <outlet property="encounterImg" destination="8Gm-hn-ntx" id="TmQ-Zj-2em"/>
+                        <outlet property="encounterMessage" destination="mnM-eg-f4C" id="RFS-V2-uZX"/>
+                        <outlet property="encounterPopUpView" destination="SQt-dD-AGh" id="cku-Cy-6Nq"/>
                         <outlet property="fuelProgressView" destination="Eid-jh-Jhb" id="ceJ-Ig-qV7"/>
+                        <outlet property="peaceOptionButton" destination="OLC-Y1-fjL" id="0kh-8y-2G9"/>
                         <outlet property="planetImg" destination="3qy-9p-dp4" id="02h-hA-Dh4"/>
                         <outlet property="planetNameLabel" destination="8ba-to-zoB" id="aUr-83-yZU"/>
                         <outlet property="shipTypeLabel" destination="SPw-eS-TYu" id="vZg-jI-8qL"/>
