@@ -26,6 +26,7 @@ class StartScreenViewController: UIViewController {
         if input != "" {
             username = input!
             print(username)
+            database.loadGame()
         }
     }
     

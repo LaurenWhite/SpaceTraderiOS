@@ -30,6 +30,9 @@ class MapViewController: UIViewController {
     var fuelNeeded: Double = 0
     var distance: Double = 0
     
+    // Event chance info
+    var eventChances: [String : Int] = [:]
+    
     
     //      UI OUTLETS      //
     
@@ -117,8 +120,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p1Selected(_ sender: Any) {
         newKey = "planet01"
-        selectedPlanetName = planets[0].getName()
-        selectedDestination = planets[0].getLocation()
+        updateSelectedInfo(indx: 0)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -127,8 +129,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p2Selected(_ sender: Any) {
         newKey = "planet02"
-        selectedPlanetName = planets[1].getName()
-        selectedDestination = planets[1].getLocation()
+        updateSelectedInfo(indx: 1)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -137,8 +138,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p3Selected(_ sender: Any) {
         newKey = "planet03"
-        selectedPlanetName = planets[2].getName()
-        selectedDestination = planets[2].getLocation()
+        updateSelectedInfo(indx: 2)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -147,8 +147,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p4Selected(_ sender: Any) {
         newKey = "planet04"
-        selectedPlanetName = planets[3].getName()
-        selectedDestination = planets[3].getLocation()
+        updateSelectedInfo(indx: 3)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -157,8 +156,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p5Selected(_ sender: Any) {
         newKey = "planet05"
-        selectedPlanetName = planets[4].getName()
-        selectedDestination = planets[4].getLocation()
+        updateSelectedInfo(indx: 4)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -167,8 +165,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p6Selected(_ sender: Any) {
         newKey = "planet06"
-        selectedPlanetName = planets[5].getName()
-        selectedDestination = planets[5].getLocation()
+        updateSelectedInfo(indx: 5)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -177,8 +174,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p7Selected(_ sender: Any) {
         newKey = "planet07"
-        selectedPlanetName = planets[6].getName()
-        selectedDestination = planets[6].getLocation()
+        updateSelectedInfo(indx: 6)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -187,8 +183,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p8Selected(_ sender: Any) {
         newKey = "planet08"
-        selectedPlanetName = planets[7].getName()
-        selectedDestination = planets[7].getLocation()
+        updateSelectedInfo(indx: 7)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -197,8 +192,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p9Selected(_ sender: Any) {
         newKey = "planet09"
-        selectedPlanetName = planets[8].getName()
-        selectedDestination = planets[8].getLocation()
+        updateSelectedInfo(indx: 8)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -207,8 +201,7 @@ class MapViewController: UIViewController {
     
     @IBAction func p10Selected(_ sender: Any) {
         newKey = "planet10"
-        selectedPlanetName = planets[9].getName()
-        selectedDestination = planets[9].getLocation()
+        updateSelectedInfo(indx: 9)
         distance = ship.calculateDistance(newDestination: selectedDestination)
         fuelNeeded = ship.calculateFuelNeeded(distance: distance)
         updateConfirmationMessage()
@@ -216,6 +209,14 @@ class MapViewController: UIViewController {
         
     }
     
+    private func updateSelectedInfo(indx: Int) {
+        let planet = planets[indx]
+        selectedPlanetName = planet.getName()
+        selectedDestination = planet.getLocation()
+        eventChances["trader"] = planet.getTraderEC()
+        eventChances["police"] = planet.getPoliceEC()
+        eventChances["mercenary"] = planet.getMercenaryEC()
+    }
     
     
     //      POP UP WINDOW FUNCTIONS       //
@@ -251,12 +252,14 @@ class MapViewController: UIViewController {
     }
     
     
+    
     //      SEGUE PREPERATION      //
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MainScreenViewController {
             destination.planetImgKey = planetImgKey
             destination.planetName = currentPlanetName
+            destination.eventChances = eventChances
         }
     }
 }

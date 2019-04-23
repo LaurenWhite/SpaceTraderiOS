@@ -9,6 +9,7 @@
 import Foundation
 
 public enum Resource: CaseIterable {
+    
     case NON_SPECIAL_RESOURCES
     case MINERAL_RICH
     case MINERAL_POOR
